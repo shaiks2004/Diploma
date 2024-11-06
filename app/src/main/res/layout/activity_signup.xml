@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:id="@+id/main"
+    tools:context=".signup"
+    android:background="@color/background_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/rg_profileImg"
+            android:layout_width="151dp"
+            android:layout_height="130dp"
+            android:src="@drawable/user"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="+Add photo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Account"
+            android:textSize="32sp"
+            android:textColor="#333"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="10dp" />
+
+        <!-- Username Input Field -->
+        <EditText
+            android:id="@+id/rgusername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:inputType="text"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:background="@drawable/edit_text_background"
+        android:textColor="#333"
+        android:textColorHint="#999"
+        android:layout_marginTop="10dp" />
+
+        <!-- Email Input Field -->
+        <EditText
+            android:id="@+id/rgemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:background="@drawable/edit_text_background"
+        android:textColor="#333"
+        android:textColorHint="#999"
+        android:layout_marginTop="10dp" />
+        <EditText
+            android:id="@+id/college"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your college name"
+            android:inputType="textLongMessage"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:background="@drawable/edit_text_background"
+            android:textColor="#333"
+            android:textColorHint="#999"
+            android:layout_marginTop="10dp" />
+        <EditText
+            android:id="@+id/rgnum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="phone number"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:background="@drawable/edit_text_background"
+            android:textColor="#333"
+            android:textColorHint="#999"
+            android:layout_marginTop="10dp" />
+
+        <!-- Password Input Field -->
+        <EditText
+            android:id="@+id/rgPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:background="@drawable/edit_text_background"
+            android:textColorHint="#999"
+            android:layout_marginTop="10dp" />
+
+
+        <!-- Confirm Password Input Field -->
+        <EditText
+            android:id="@+id/rgrePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Re-Password"
+            android:inputType="textPassword"
+            android:textSize="21sp"
+            android:padding="10dp"
+            android:background="@drawable/edit_text_background"
+            android:textColor="#333"
+            android:textColorHint="#999"
+            android:layout_marginTop="10dp" />
+        <!-- Sign Up Button -->
+        <Button
+            android:id="@+id/signupbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textSize="10sp"
+            android:background="@drawable/button_background"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp" />
+
+        <!-- Login Link -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/loginbut"
+            android:text="Already have an account?Login"
+            android:textColor="#0E0C0C"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:padding="16dp"
+            android:layout_gravity="center_horizontal"
+            android:onClick="navigateToLogin" />
+
+    </LinearLayout>
+</ScrollView>

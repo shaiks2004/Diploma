@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "28386282065",
+    "firebase_url": "https://splash-screeen-3f2a4-default-rtdb.firebaseio.com",
+    "project_id": "splash-screeen-3f2a4",
+    "storage_bucket": "splash-screeen-3f2a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28386282065:android:a04f971b317ecd377e0670",
+        "android_client_info": {
+          "package_name": "com.example.education"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWzi8zeGSzGFxELebl5fGXroE-pgZyLLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28386282065:android:fff13ed1f037650e7e0670",
+        "android_client_info": {
+          "package_name": "com.example.splash_screeen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWzi8zeGSzGFxELebl5fGXroE-pgZyLLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

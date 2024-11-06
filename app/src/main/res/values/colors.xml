@@ -1,0 +1,27 @@
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="background_color">#F5F5F5</color>
+    <color name="fab_color">#FF4081</color>
+    <color name="splash">#C60303</color>
+    <color name="textBackground">#3e2779</color>
+    <color name="inputBackground">#b9a2f5</color>
+    <color name="sent">#a044d5</color>
+    <color name="received">#413269</color>
+    <color name="white">#ffff</color>
+    <color name="chatback">#1E1C1C</color>
+    <color name="cme">#E64E4E</color>
+    <color name="ece">#3BF143</color>
+    <color name="eee">#52C7FB</color>
+    <color name="mec">#D3B454</color>
+    <color name="civil">#A0BCB9</color>
+    <color name="question">#A7C0C3</color>
+    <color name="re">#F08080</color>
+    <color name="background_color1">#F0F4F8</color> <!-- Light grayish-blue background -->
+    <color name="title_color">#FF5722</color> <!-- Vibrant orange-red for the title -->
+    <color name="scholarship_color">#00796B</color> <!-- Teal color for scholarship text -->
+    <color name="white1">#FFFFFF</color> <!-- Pure white for card background -->
+    <color name="card_background">#B6D7DC</color>
+    <color name="buttin">#A0BCB9</color>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_centerInParent="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".curriculam">
+
+    <!-- Header Image -->
+
+    <ImageView
+        android:id="@+id/headerImage"
+        android:layout_width="375dp"
+        android:layout_height="378dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="30dp"
+        android:scaleType="centerCrop"
+        android:alpha="0.3"
+        android:src="@drawable/sbtetlogo" />
+
+    <Button
+        android:id="@+id/curiculamc20"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:text="Curriculam C20"
+        android:layout_marginLeft="10dp"
+        style="@style/mytheme"
+        android:textSize="30dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textStyle="bold"
+        android:backgroundTint="#1A5A53"/>
+
+    <Button
+        android:id="@+id/curiculamc23"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="350dp"
+        android:text="Curriculam C23"
+        android:textSize="30dp"
+        style="@style/mytheme"
+        android:fontFamily="@font/poppins_bold"
+        android:textStyle="bold"
+        android:backgroundTint="#1A5A53"/>
+
+<!--    <TextView-->
+<!--        android:layout_width="500dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginLeft="5dp"-->
+<!--        android:layout_marginTop="496dp"-->
+<!--        android:layout_marginRight="5dp"-->
+<!--        android:layout_marginBottom="219dp"-->
+<!--        android:background="#28DDCC"-->
+<!--        android:text="@string/curriculam" />-->
+
+
+</RelativeLayout>

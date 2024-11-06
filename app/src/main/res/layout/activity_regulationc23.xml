@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:padding="4dp"
+    android:background="@color/background_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".regulationc23">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- CardView 1: DCME -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="4dp"
+                android:id="@+id/cme"
+                app:cardBackgroundColor="@color/cme"
+                style="@style/MainButtonStyle"
+                android:padding="8dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DCME"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="25sp"
+                        android:background="@android:color/transparent"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- CardView 2: DECE -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="4dp"
+                android:id="@+id/ece23"
+                app:cardBackgroundColor="@color/ece"
+                style="@style/MainButtonStyle"
+                android:padding="8dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DECE"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@android:color/transparent"
+                        android:layout_gravity="center"/>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- CardView 3: DEEE -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="4dp"
+                android:id="@+id/eee"
+                style="@style/MainButtonStyle"
+                app:cardBackgroundColor="@color/eee"
+                android:padding="8dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DEEE"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="25dp"
+                        android:background="@android:color/transparent"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- CardView 4: DEEEE -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/mec"
+                android:elevation="4dp"
+                android:id="@+id/civil"
+                style="@style/MainButtonStyle"
+                android:padding="8dp">
+
+
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DCIV"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="25sp"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="center" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- CardView 5: DCIV -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="4dp"
+                android:id="@+id/mech"
+                style="@style/MainButtonStyle"
+                app:cardBackgroundColor="@color/civil"
+                android:padding="8dp">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:text="DMEC"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="25sp" />
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+
