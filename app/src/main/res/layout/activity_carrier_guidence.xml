@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".carrierGuidence"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@color/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/MainButtonStyle"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:padding="8dp"
+            android:src="@drawable/leftarrow" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/spartan_bold"
+
+            android:text="Carrier Guidence"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="List of Courses after Polytechnic Some of the higher education courses which the candidates can pursue after completing Polytechnic is mentioned below:"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="B.Tech Lateral Entry Scheme The most popular option for Polytechnic Diploma holders, especially those from engineering domains, is to take up B.Tech or B.E. For this, candidates need to appear for the respective Engineering Entrance Test for the college and course they want to join.B.Tech or B.E \nDuration: 3 years (with lateral entry)" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="AIME Certification Another option for Diploma holders from an engineering background is to take up the AIME Certification Course. A.M.I.E (Associate Member of the Institutions of Engineers) certification is a professional certification equivalent to B.E. Degree. The candidates who complete the AIME course are awarded an AIME certificate by the Institute of Engineering, India.\nThe AIME exam consists of two sections and it takes around 4 years to complete the program. However, Polytechnic Diploma holders do not need to appear for a few papers from Section A, i.e., Project Work. Therefore, they can earn the AIME certification in mere 3 years. You can find more details about this option on the official" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Graduation in a Specific Stream\n
+After Polytechnic, the candidates can also go for graduation in the specific stream in which they have pursued Polytechnic
+Depends on the Courses\n
+The candidate should have passed a Diploma or equivalent from a recognized institute.\n
+2 to 4 LPA\n
+" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

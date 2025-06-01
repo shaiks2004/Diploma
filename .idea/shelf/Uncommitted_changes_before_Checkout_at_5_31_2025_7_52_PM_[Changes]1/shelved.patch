@@ -1,0 +1,195 @@
+Index: app/src/main/res/layout/activity_welcome_screen.xml
+===================================================================
+diff --git a/app/src/main/res/layout/activity_welcome_screen.xml b/app/src/main/res/layout/activity_welcome_screen.xml
+new file mode 100644
+--- /dev/null	(date 1748683594511)
++++ b/app/src/main/res/layout/activity_welcome_screen.xml	(date 1748683594511)
+@@ -0,0 +1,58 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/main"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".Welcome_Screen"
++    android:layout_margin="25dp"
++    android:padding="35px">
++
++    <TextView
++        android:id="@+id/welcome"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="HEY, \nWELCOME "
++        android:textColor="@color/Thirdary"
++        android:fontFamily="@font/spartan_bold"
++        android:textSize="48dp"
++        />
++
++    <ImageView
++        android:id="@+id/imglogo"
++        android:layout_width="match_parent"
++        android:layout_height="300dp"
++        android:src="@drawable/welcomescreenday"
++        android:layout_below="@+id/welcome"
++        android:layout_centerInParent="true"/>
++      
++<com.google.android.material.button.MaterialButton
++    android:id="@+id/Login"
++    android:layout_width="281dp"
++    android:layout_height="65dp"
++    android:text="LOG IN"
++    android:fontFamily="@font/poppins_regular"
++    android:textSize="36dp"
++    android:layout_below="@+id/imglogo"
++    android:gravity="center"
++    android:layout_centerInParent="true"
++    android:textColor="@color/secondary"
++    app:cornerRadius="7dp"
++    android:backgroundTint="@color/Thirdary"
++    />
++    <TextView
++        android:id="@+id/signup"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text=" "
++        android:textAlignment="center"
++        android:layout_marginTop="10dp"
++        android:layout_below="@+id/Login"
++        android:fontFamily="@font/poppins_regular"
++        android:textSize="15dp"
++        android:layout_centerInParent="true"/>
++
++
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/education/Welcome_Screen.java
+===================================================================
+diff --git a/app/src/main/java/com/example/education/Welcome_Screen.java b/app/src/main/java/com/example/education/Welcome_Screen.java
+new file mode 100644
+--- /dev/null	(date 1748684034968)
++++ b/app/src/main/java/com/example/education/Welcome_Screen.java	(date 1748684034968)
+@@ -0,0 +1,55 @@
++package com.example.education;
++
++import android.content.Intent;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.TextView;
++
++import androidx.activity.EdgeToEdge;
++import androidx.appcompat.app.AppCompatActivity;
++import android.text.Html;
++
++import com.google.android.material.button.MaterialButton;
++
++
++public class Welcome_Screen extends AppCompatActivity {
++    public TextView Singup;
++    public MaterialButton login;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        EdgeToEdge.enable(this);
++        setContentView(R.layout.activity_welcome_screen);
++        Singup=findViewById(R.id.signup);
++        login=findViewById(R.id.Login);
++        String htmlText = "Don't have an account? <font color='#274CDE'>Sign up</font>";
++        Singup.setText(Html.fromHtml(htmlText, Html.FROM_HTML_MODE_LEGACY));
++
++        OnLogin(login);
++        OnSignup(Singup);
++    }
++
++    private void OnSignup(TextView singup) {
++        singup.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                Intent intent =new Intent(Welcome_Screen.this , signup.class);
++                startActivity(intent);
++                finish();
++
++            }
++        });
++    }
++
++    private void OnLogin(MaterialButton login) {
++        login.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                Intent intent =new Intent(Welcome_Screen.this , login.class);
++                startActivity(intent);
++                finish();
++            }
++        });
++    }
++}
+\ No newline at end of file
+Index: Diploma.iml
+===================================================================
+diff --git a/Diploma.iml b/Diploma.iml
+new file mode 100644
+--- /dev/null	(date 1748246726419)
++++ b/Diploma.iml	(date 1748246726419)
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" packagePrefix="com.example.education" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/misc.xml
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1748693559676)
++++ b/.idea/misc.xml	(date 1748693559676)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="jbr-21" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++  <component name="VisualizationToolProject">
++    <option name="state">
++      <ProjectState>
++        <option name="scale" value="0.14670410156250002" />
++      </ProjectState>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1748245219117)
++++ b/.idea/vcs.xml	(date 1748245219117)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1748245145109)
++++ b/.idea/.gitignore	(date 1748245145109)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml

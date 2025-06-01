@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Education">
+
+        <activity
+            android:name=".Welcome_Screen"
+            android:exported="false" />
+        <activity
+            android:name=".csec23questions"
+            android:exported="false" />
+        <activity
+            android:name=".EEE5THSEM2023"
+            android:exported="false" />
+        <activity
+            android:name=".EEE5THSEM"
+            android:exported="false" />
+        <activity
+            android:name=".EEE4THSEMSEM2023"
+            android:exported="false" />
+        <activity
+            android:name=".EEE4THSEMSEM2022"
+            android:exported="false" />
+        <activity
+            android:name=".EEE4THSEM"
+            android:exported="false" />
+        <activity
+            android:name=".EEE2NDSEM2023"
+            android:exported="false" />
+        <activity
+            android:name=".EEE2NDSEM2022"
+            android:exported="false" />
+        <activity
+            android:name=".EEE2NDSEM"
+            android:exported="false" />
+        <activity
+            android:name=".EEE1STSEM2023"
+            android:exported="false" />
+        <activity
+            android:name=".EEE1STSEM2022"
+            android:exported="false" />
+        <activity
+            android:name=".EEE1STSEM2021"
+            android:exported="false" />
+        <activity
+            android:name=".EEE1STSEM"
+            android:exported="false" />
+        <activity
+            android:name=".regularc20EEEbranchlist"
+            android:exported="false" />
+        <activity
+            android:name=".ECE3RDSEM2023"
+            android:exported="false" />
+        <activity
+            android:name=".ECE3RDSEM2022"
+            android:exported="false" />
+        <activity
+            android:name=".ECE2NDSEM"
+            android:exported="false" />
+        <activity
+            android:name=".ECE1STSEM2023"
+            android:exported="false" />
+        <activity
+            android:name=".ECE1STSEM2022"
+            android:exported="false" />
+        <activity
+            android:name=".ECE1STSEM2021"
+            android:exported="false" />
+        <activity
+            android:name=".regularc20ECEbranchlist"
+            android:exported="false" />
+        <activity android:name=".ECE1STSEM" />
+        <activity
+            android:name=".CME5THSEM2023"
+            android:exported="false" />
+        <activity
+            android:name=".CME5THSEM"
+            android:exported="false" />
+        <activity
+            android:name=".CME4THSEM2023"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".CME4THSEM2022" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".CME4THSEM"
+            android:exported="false" />
+        <activity
+            android:name=".CME3RDSEM2022"
+            android:exported="false" />
+        <activity
+            android:name=".CME3RDSEM2021"
+            android:exported="false" />
+        <activity
+            android:name=".CME3RDSEM"
+            android:exported="false" />
+        <activity
+            android:name=".regularc20sem3"
+            android:exported="false" />
+        <activity
+            android:name=".regularc20branchlist"
+            android:exported="false" />
+        <activity
+            android:name=".ecec23questions"
+            android:exported="false" />
+        <activity android:name=".c23question" />
+        <activity
+            android:name=".c22question"
+            android:exported="false" />
+        <activity
+            android:name=".drawingc23"
+            android:exported="false" />
+        <activity
+            android:name=".prgramc23"
+            android:exported="false" />
+        <activity
+            android:name=".BCEc23"
+            android:exported="false" />
+        <activity
+            android:name=".chemistryc23"
+            android:exported="false" />
+        <activity
+            android:name=".physicsc23"
+            android:exported="false" />
+        <activity
+            android:name=".M1c23"
+            android:exported="false" />
+        <activity
+            android:name=".Englishc23"
+            android:exported="false" />
+        <activity
+            android:name=".drawingc22"
+            android:exported="false" />
+        <activity
+            android:name=".prgramc22"
+            android:exported="false" />
+        <activity
+            android:name=".BCEc22"
+            android:exported="false" />
+        <activity
+            android:name=".chemistryc22"
+            android:exported="false" />
+        <activity
+            android:name=".physicsc22"
+            android:exported="false" />
+        <activity
+            android:name=".M1c22"
+            android:exported="false" />
+        <activity
+            android:name=".Englishc22"
+            android:exported="false" />
+        <activity
+            android:name=".drawingc21"
+            android:exported="false" />
+        <activity
+            android:name=".prgramc21"
+            android:exported="false" />
+        <activity
+            android:name=".BCEc21"
+            android:exported="false" />
+        <activity
+            android:name=".chemistryc21"
+            android:exported="false" />
+        <activity
+            android:name=".C21question"
+            android:exported="false" />
+        <activity
+            android:name=".physicsc21"
+            android:exported="false" />
+        <activity
+            android:name=".M1c21"
+            android:exported="false" />
+        <activity
+            android:name=".Englishc21"
+            android:exported="false" />
+        <activity
+            android:name=".JobGuidence"
+            android:exported="false" />
+        <activity
+            android:name=".courcesGuidence"
+            android:exported="false" />
+        <activity
+            android:name=".carrierGuidence"
+            android:exported="false" />
+        <activity
+            android:name=".sectorGuidence"
+            android:exported="false" />
+        <activity
+            android:name=".aboutus"
+            android:exported="false" />
+        <activity
+            android:name=".Giudence"
+            android:exported="false" />
+        <activity
+            android:name=".c16resouces"
+            android:exported="false" />
+        <activity
+            android:name=".c20resouces"
+            android:exported="false" />
+        <activity
+            android:name=".civilcurriculamc23"
+            android:exported="false" />
+        <activity
+            android:name=".mechcurriculamc23"
+            android:exported="false" />
+        <activity
+            android:name=".eeecurriculamc23"
+            android:exported="false" />
+        <activity
+            android:name=".ececurriculamc23"
+            android:exported="false" />
+        <activity
+            android:name=".cmecurriculamc23"
+            android:exported="false" />
+        <activity
+            android:name=".civilcurriculam"
+            android:exported="false" />
+        <activity
+            android:name=".mechcurriculam"
+            android:exported="false" />
+        <activity
+            android:name=".eeecurriculam"
+            android:exported="false" />
+        <activity
+            android:name=".ececurriculam"
+            android:exported="false" />
+        <activity
+            android:name=".cmecurriculam"
+            android:exported="false" />
+        <activity
+            android:name=".guidencec20"
+            android:exported="false" />
+        <activity
+            android:name=".guidencec23"
+            android:exported="false" />
+        <activity
+            android:name=".scholor"
+            android:exported="false" />
+        <activity
+            android:name=".internships"
+            android:exported="false" />
+        <activity
+            android:name=".cmec23"
+            android:exported="false" />
+        <activity
+            android:name=".cmec16"
+            android:exported="false" />
+        <activity
+            android:name=".c2019"
+            android:exported="false" />
+        <activity android:name=".cmec20" />
+        <activity
+            android:name=".regularc20"
+            android:exported="false" />
+        <activity
+            android:name=".regulationc23"
+            android:exported="false" />
+        <activity
+            android:name=".regulationc16"
+            android:exported="false" />
+        <activity
+            android:name=".chatbot"
+            android:exported="false" />
+        <activity
+            android:name=".diploma_question"
+            android:exported="false" />
+        <activity
+            android:name=".ecet_question"
+            android:exported="false" />
+        <activity
+            android:name=".signup"
+            android:exported="false" />
+        <activity
+            android:name=".question_papers"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
+            android:name=".curriculam"
+            android:exported="false" />
+        <activity
+            android:name=".youtube"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>
