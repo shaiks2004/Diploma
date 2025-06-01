@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.education"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.education"
@@ -31,6 +31,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
@@ -42,13 +43,15 @@ dependencies {
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
     implementation("com.google.firebase:firebase-analytics")
-    implementation ("com.google.android.material:material:1.9.0")// Update to the latest version
+    implementation ("com.google.android.material:material:1.9.0")
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("androidx.viewpager2:viewpager2:1.0.0")
 
-//    implementation ("com.airbnb.lottie:lottie:4.2.2") //error showing change the version
-    implementation ("com.github.barteksc:android-pdf-viewer:2.8.2")
+
+//Pdf viewver for the applicatikn
+    implementation ("com.github.mhiew:android-pdf-viewer:3.2.0-beta.3")
+
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
     implementation(libs.firebase.storage)

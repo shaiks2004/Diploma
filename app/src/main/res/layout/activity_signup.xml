@@ -13,96 +13,100 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        android:padding="20dp"
-        android:gravity="center">
+        android:padding="20dp">
 
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/rg_profileImg"
             android:layout_width="151dp"
             android:layout_height="130dp"
-            android:src="@drawable/user"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:src="@drawable/user" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="+Add photo"/>
+            android:text="+Add photo"
+            android:textAlignment="center" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create Account"
-            android:textSize="32sp"
-            android:textColor="#333"
+            android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-black"
-            android:layout_marginTop="10dp" />
+            android:text="Create Account"
+            android:textColor="#333"
+            android:textSize="32sp" />
 
         <!-- Username Input Field -->
         <EditText
             android:id="@+id/rgusername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_background"
             android:hint="Username"
             android:inputType="text"
-            android:textSize="20sp"
             android:padding="16dp"
-            android:background="@drawable/edit_text_background"
-        android:textColor="#333"
-        android:textColorHint="#999"
-        android:layout_marginTop="10dp" />
+            android:textColor="#333"
+            android:textColorHint="#999"
+            android:textSize="20sp" />
 
         <!-- Email Input Field -->
         <EditText
             android:id="@+id/rgemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_background"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textSize="20sp"
             android:padding="16dp"
-            android:background="@drawable/edit_text_background"
-        android:textColor="#333"
-        android:textColorHint="#999"
-        android:layout_marginTop="10dp" />
+            android:textColor="#333"
+            android:textColorHint="#999"
+            android:textSize="20sp" />
+
         <EditText
             android:id="@+id/college"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_background"
             android:hint="Enter your college name"
             android:inputType="textLongMessage"
-            android:textSize="20sp"
             android:padding="16dp"
-            android:background="@drawable/edit_text_background"
             android:textColor="#333"
             android:textColorHint="#999"
-            android:layout_marginTop="10dp" />
+            android:textSize="20sp" />
+
         <EditText
             android:id="@+id/rgnum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_background"
             android:hint="phone number"
             android:inputType="numberDecimal"
-            android:textSize="20sp"
             android:padding="16dp"
-            android:background="@drawable/edit_text_background"
             android:textColor="#333"
             android:textColorHint="#999"
-            android:layout_marginTop="10dp" />
+            android:textSize="20sp" />
 
         <!-- Password Input Field -->
         <EditText
             android:id="@+id/rgPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_background"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textSize="20sp"
             android:padding="16dp"
-            android:background="@drawable/edit_text_background"
             android:textColorHint="#999"
-            android:layout_marginTop="10dp" />
+            android:textSize="20sp" />
 
 
         <!-- Confirm Password Input Field -->
@@ -110,39 +114,39 @@
             android:id="@+id/rgrePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_background"
             android:hint="Re-Password"
             android:inputType="textPassword"
-            android:textSize="21sp"
             android:padding="10dp"
-            android:background="@drawable/edit_text_background"
             android:textColor="#333"
             android:textColorHint="#999"
-            android:layout_marginTop="10dp" />
+            android:textSize="21sp" />
         <!-- Sign Up Button -->
         <Button
             android:id="@+id/signupbutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:textSize="10sp"
-            android:background="@drawable/button_background"
-            android:textColor="#fff"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_background"
+            android:text="Sign Up"
+            android:textColor="#fff"
+            android:textSize="10sp" />
 
         <!-- Login Link -->
         <TextView
+            android:id="@+id/loginbut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/loginbut"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:onClick="navigateToLogin"
+            android:padding="16dp"
             android:text="Already have an account?Login"
             android:textColor="#0E0C0C"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:padding="16dp"
-            android:layout_gravity="center_horizontal"
-            android:onClick="navigateToLogin" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 </ScrollView>

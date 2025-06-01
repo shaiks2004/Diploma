@@ -5,5 +5,9 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Education" parent="Base.Theme.Education" />
+    <style name="Theme.Education" parent="Base.Theme.Education" >
+    <item name="colorPrimary">#000000</item>
+    <item name="colorPrimaryDark">#000000</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    </style>
 </resources>

@@ -1,0 +1,692 @@
+Index: app/src/main/res/values/styles.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <!-- Base application theme -->\r\n    <style name=\"AppTheme\" parent=\"Theme.AppCompat.Light.DarkActionBar\">\r\n        <!-- Customize your theme here -->\r\n        <item name=\"colorPrimary\">@color/colorPrimary</item>\r\n        <item name=\"colorPrimaryDark\">@color/colorPrimaryDark</item>\r\n        <item name=\"colorAccent\">@color/colorAccent</item>\r\n    </style>\r\n    <style name=\"mytheme\" parent=\"Theme.AppCompat.Light.NoActionBar\">\r\n        <!-- Customize your theme here -->\r\n        <item name=\"colorPrimary\">#6E120B</item>\r\n        <item name=\"colorPrimaryDark\">@color/colorAccent</item>\r\n        <item name=\"colorAccent\">@color/fab_color</item>\r\n    </style>\r\n\r\n    <!-- Style for Buttons -->\r\n    <style name=\"MainButtonStyle\">\r\n        <item name=\"android:layout_width\">match_parent</item>\r\n        <item name=\"android:layout_height\">wrap_content</item>\r\n        <item name=\"android:textSize\">20sp</item>\r\n        <item name=\"android:textColor\">@android:color/white</item>\r\n        <item name=\"android:background\">@drawable/button_background</item>\r\n        <item name=\"android:layout_marginTop\">10dp</item>\r\n        <item name=\"android:padding\">12dp</item>\r\n        <item name=\"android:textAllCaps\">true</item>\r\n    </style>\r\n\r\n    <!-- Style for Floating Action Button -->\r\n    <style name=\"MainFabStyle\">\r\n        <item name=\"android:layout_width\">wrap_content</item>\r\n        <item name=\"android:layout_height\">wrap_content</item>\r\n        <item name=\"android:layout_gravity\">bottom|end</item>\r\n        <item name=\"android:layout_margin\">16dp</item>\r\n\r\n    </style>\r\n\r\n</resources>\r\n
+===================================================================
+diff --git a/app/src/main/res/values/styles.xml b/app/src/main/res/values/styles.xml
+--- a/app/src/main/res/values/styles.xml	(revision 092c3514e054570f96761f2377be98fe8ff396a7)
++++ b/app/src/main/res/values/styles.xml	(date 1748692541959)
+@@ -2,8 +2,8 @@
+     <!-- Base application theme -->
+     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+         <!-- Customize your theme here -->
+-        <item name="colorPrimary">@color/colorPrimary</item>
+-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
++        <item name="colorPrimary">#00000000</item>
++        <item name="colorPrimaryDark">@color/Thirdary</item>
+         <item name="colorAccent">@color/colorAccent</item>
+     </style>
+     <style name="mytheme" parent="Theme.AppCompat.Light.NoActionBar">
+@@ -12,6 +12,11 @@
+         <item name="colorPrimaryDark">@color/colorAccent</item>
+         <item name="colorAccent">@color/fab_color</item>
+     </style>
++    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
++        <item name="android:textColorPrimary">#FFFFFF</item> <!-- Toolbar title -->
++        <item name="colorControlNormal">#000000</item> <!-- Back icon color -->
++    </style>
++
+ 
+     <!-- Style for Buttons -->
+     <style name="MainButtonStyle">
+Index: app/src/main/java/com/example/education/login.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.education;\r\n\r\nimport android.app.ProgressDialog;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.text.TextUtils;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.core.graphics.Insets;\r\nimport androidx.core.view.ViewCompat;\r\nimport androidx.core.view.WindowInsetsCompat;\r\n\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.auth.FirebaseUser;\r\n\r\npublic class login extends AppCompatActivity {\r\n\r\n    private ProgressDialog progressDialog;\r\n    private FirebaseAuth auth;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_login);\r\n\r\n        // Initialize Firebase Auth\r\n        auth = FirebaseAuth.getInstance();\r\n\r\n        // Check if user is already logged in\r\n        FirebaseUser currentUser = auth.getCurrentUser();\r\n        if (currentUser != null) {\r\n            // User is signed in, redirect to MainActivity\r\n            Intent intent = new Intent(login.this, MainActivity.class);\r\n            startActivity(intent);\r\n            finish();  // Close the login activity\r\n            return;  // Exit onCreate to prevent showing login screen\r\n        }\r\n\r\n        // Set up layout insets\r\n        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {\r\n            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());\r\n            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);\r\n            return insets;\r\n        });\r\n\r\n        String emailPattern = \"[a-z0-9._%+-]+@[a-z0-9.-]+\\\\.[a-z]{2,4}\";\r\n\r\n        progressDialog = new ProgressDialog(this);\r\n        progressDialog.setMessage(\"Please Wait\");\r\n        progressDialog.setCancelable(false);\r\n\r\n        Button logButton = findViewById(R.id.click);\r\n        EditText email = findViewById(R.id.email);\r\n        EditText password = findViewById(R.id.password);\r\n        TextView sign = findViewById(R.id.signup);\r\n\r\n        sign.setOnClickListener(view -> {\r\n            Intent red = new Intent(login.this, signup.class);\r\n            startActivity(red);\r\n            finish();\r\n        });\r\n\r\n        logButton.setOnClickListener(view -> {\r\n            String Email = email.getText().toString();\r\n            String pass = password.getText().toString();\r\n\r\n            if (TextUtils.isEmpty(Email)) {\r\n                Toast.makeText(login.this, \"Enter EMAIL to continue\", Toast.LENGTH_SHORT).show();\r\n            } else if (TextUtils.isEmpty(pass)) {\r\n                Toast.makeText(login.this, \"Enter PASSWORD to continue\", Toast.LENGTH_SHORT).show();\r\n            } else if (!Email.matches(emailPattern)) {\r\n                email.setError(\"Invalid email format\");\r\n            } else if (pass.length() < 6) {\r\n                Toast.makeText(this, \"Password length is too short\", Toast.LENGTH_SHORT).show();\r\n            } else {\r\n                // Show progress dialog\r\n                progressDialog.show();\r\n\r\n                auth.signInWithEmailAndPassword(Email, pass).addOnCompleteListener(task -> {\r\n                    // Dismiss progress dialog\r\n                    progressDialog.dismiss();\r\n\r\n                    if (task.isSuccessful()) {\r\n                        Intent intent = new Intent(login.this, MainActivity.class);\r\n                        startActivity(intent);\r\n                        finish();\r\n                    } else {\r\n                        Toast.makeText(login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();\r\n                    }\r\n                });\r\n            }\r\n        });\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/app/src/main/java/com/example/education/login.java b/app/src/main/java/com/example/education/login.java
+--- a/app/src/main/java/com/example/education/login.java	(revision 092c3514e054570f96761f2377be98fe8ff396a7)
++++ b/app/src/main/java/com/example/education/login.java	(date 1748701183456)
+@@ -4,12 +4,14 @@
+ import android.content.Intent;
+ import android.os.Bundle;
+ import android.text.TextUtils;
++import android.view.MenuItem;
+ import android.widget.Button;
+ import android.widget.EditText;
+ import android.widget.TextView;
+ import android.widget.Toast;
+ 
+ import androidx.appcompat.app.AppCompatActivity;
++import androidx.appcompat.widget.Toolbar;
+ import androidx.core.graphics.Insets;
+ import androidx.core.view.ViewCompat;
+ import androidx.core.view.WindowInsetsCompat;
+@@ -21,6 +23,7 @@
+ 
+     private ProgressDialog progressDialog;
+     private FirebaseAuth auth;
++    Toolbar toolBar;
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+@@ -57,7 +60,8 @@
+         EditText email = findViewById(R.id.email);
+         EditText password = findViewById(R.id.password);
+         TextView sign = findViewById(R.id.signup);
+-
++        toolBar= findViewById(R.id.ttoolbar);
++        _IntiToolbar();
+         sign.setOnClickListener(view -> {
+             Intent red = new Intent(login.this, signup.class);
+             startActivity(red);
+@@ -88,6 +92,7 @@
+                         Intent intent = new Intent(login.this, MainActivity.class);
+                         startActivity(intent);
+                         finish();
++
+                     } else {
+                         Toast.makeText(login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                     }
+@@ -95,4 +100,23 @@
+             }
+         });
+     }
++
++    private void _IntiToolbar() {
++        setSupportActionBar(toolBar);
++        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
++        getSupportActionBar().setHomeButtonEnabled(true);
++        getSupportActionBar().setTitle("LOGIN");
++    }
++    public boolean onOptionsItemSelected(MenuItem item) {
++        // Handle action bar item clicks here. The action bar will
++        // automatically handle clicks on the Home/Up button, so long
++        // as you specify a parent activity in AndroidManifest.xml.
++        int id = item.getItemId();
++
++        if (id==android.R.id.home){
++            this.finish();
++        }
++
++        return super.onOptionsItemSelected(item);
++    }
+ }
+Index: app/src/main/res/layout/activity_login.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/main\"\r\n    tools:context=\".login\"\r\n    android:orientation=\"vertical\"\r\n    android:background=\"#f7f7f7\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"vertical\"\r\n        android:layout_marginTop=\"100dp\"\r\n        android:padding=\"20dp\"\r\n        android:gravity=\"center\">\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Welcome to\"\r\n            android:textSize=\"24sp\"\r\n            android:textColor=\"#333\"\r\n            android:fontFamily=\"sans-serif-medium\" />\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Polytechnic Diploma\"\r\n            android:textSize=\"36sp\"\r\n            android:textColor=\"#333\"\r\n            android:fontFamily=\"sans-serif-black\"\r\n            android:textStyle=\"bold\" />\r\n\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"vertical\"\r\n        android:layout_marginTop=\"50dp\"\r\n        android:padding=\"20dp\"\r\n        android:background=\"@drawable/card_background\">\r\n\r\n        <EditText\r\n            android:id=\"@+id/email\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:hint=\"Email\"\r\n            android:inputType=\"textEmailAddress\"\r\n            android:textSize=\"30dp\"\r\n            android:padding=\"10dp\"\r\n            android:background=\"@drawable/edit_text_background\"\r\n            android:textColor=\"#333\"\r\n            android:textColorHint=\"#999\" />\r\n\r\n        <EditText\r\n            android:id=\"@+id/password\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:hint=\"Password\"\r\n            android:inputType=\"textPassword\"\r\n            android:textSize=\"30dp\"\r\n            android:padding=\"10dp\"\r\n            android:background=\"@drawable/edit_text_background\"\r\n            android:textColor=\"#333\"\r\n            android:textColorHint=\"#999\"\r\n            android:layout_marginTop=\"10dp\" />\r\n\r\n    </LinearLayout>\r\n\r\n    <Button\r\n        android:id=\"@+id/click\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Login\"\r\n        android:textSize=\"18sp\"\r\n        android:padding=\"10dp\"\r\n        android:background=\"@drawable/button_background\"\r\n        android:textColor=\"#fff\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_marginLeft=\"20dp\"\r\n        android:layout_marginRight=\"20dp\" />\r\n\r\n    <TextView\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Don't have an account? Sign up\"\r\n        android:textSize=\"16sp\"\r\n        android:textColor=\"#666\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_gravity=\"center_horizontal\" />\r\n<TextView\r\n    android:layout_width=\"wrap_content\"\r\n    android:layout_height=\"wrap_content\"\r\n    android:id=\"@+id/signup\"\r\n    android:text=\"Signup\"\r\n    android:textColor=\"@color/cme\"\r\n    android:padding=\"10dp\"\r\n    android:layout_marginLeft=\"150dp\"\r\n    android:layout_marginTop=\"10dp\" />\r\n\r\n\r\n</LinearLayout>
+===================================================================
+diff --git a/app/src/main/res/layout/activity_login.xml b/app/src/main/res/layout/activity_login.xml
+--- a/app/src/main/res/layout/activity_login.xml	(revision 092c3514e054570f96761f2377be98fe8ff396a7)
++++ b/app/src/main/res/layout/activity_login.xml	(date 1748701057033)
+@@ -1,106 +1,120 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<RelativeLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:id="@+id/main"
+     tools:context=".login"
+-    android:orientation="vertical"
+-    android:background="#f7f7f7">
++    android:background="@color/secondary">
+ 
++    <androidx.appcompat.widget.Toolbar
++        android:id="@+id/ttoolbar"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_alignParentTop="true"
++        android:background="@color/white"
++        android:elevation="4dp"
++        android:paddingEnd="16dp"
++        app:titleTextColor="@color/Thirdary"
++        android:theme="@style/ToolbarTheme">
++    </androidx.appcompat.widget.Toolbar>
+     <LinearLayout
+         android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
++        android:layout_height="match_parent"
+         android:orientation="vertical"
+-        android:layout_marginTop="100dp"
+-        android:padding="20dp"
+-        android:gravity="center">
++        android:layout_marginLeft="25dp"
++        android:layout_marginRight="25dp"
++        android:layout_marginBottom="25dp"
++        android:layout_marginStart="25dp"
++        android:layout_marginEnd="25dp"
++        android:id="@+id/layout"
++        android:layout_below="@+id/ttoolbar"
++        >
+ 
+-        <TextView
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:text="Welcome to"
+-            android:textSize="24sp"
+-            android:textColor="#333"
+-            android:fontFamily="sans-serif-medium" />
+-
+-        <TextView
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:text="Polytechnic Diploma"
+-            android:textSize="36sp"
+-            android:textColor="#333"
+-            android:fontFamily="sans-serif-black"
+-            android:textStyle="bold" />
+-
+-    </LinearLayout>
+-
+-    <LinearLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:orientation="vertical"
+-        android:layout_marginTop="50dp"
+-        android:padding="20dp"
+-        android:background="@drawable/card_background">
+-
+-        <EditText
+-            android:id="@+id/email"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:hint="Email"
+-            android:inputType="textEmailAddress"
+-            android:textSize="30dp"
+-            android:padding="10dp"
+-            android:background="@drawable/edit_text_background"
+-            android:textColor="#333"
+-            android:textColorHint="#999" />
++        <ImageView
++            android:layout_width="match_parent"
++            android:layout_height="285dp"
++            android:id="@+id/loginlogo"
++            android:layout_marginBottom="15dp"
++            android:src="@drawable/loginlogo"
++            android:layout_below="@id/layout"/>
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:id="@+id/forr_phone"
++        android:layout_margin="5dp"
++        android:orientation="vertical">
++            <TextView
++                android:id="@+id/textview"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Phone number or Email"
++                android:textSize="20sp"
++                android:layout_below="@id/forr_phone"
++                android:fontFamily="@font/poppins_regular"
++                android:textColor="#333" />
++            <EditText
++                android:id="@+id/email"
++                android:layout_width="match_parent"
++                android:layout_height="55dp"
++                android:padding="10dp"
++                android:layout_below="@id/textview"
++                android:background="@drawable/edit_text_background"
++                android:inputType="textEmailAddress"
++                android:textSize="30sp" />
++    </LinearLayout>
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:id="@+id/forr_password"
++        android:layout_margin="5dp"
++        android:orientation="vertical">
++            <TextView
++                android:id="@+id/textview1"
++                android:textSize="20sp"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:fontFamily="@font/poppins_regular"
++                android:layout_below="@+id/forr_password"
++                android:text="Password" />
+ 
+-        <EditText
+-            android:id="@+id/password"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:hint="Password"
+-            android:inputType="textPassword"
+-            android:textSize="30dp"
+-            android:padding="10dp"
+-            android:background="@drawable/edit_text_background"
+-            android:textColor="#333"
+-            android:textColorHint="#999"
+-            android:layout_marginTop="10dp" />
+-
++            <EditText
++                android:id="@+id/password"
++                android:layout_width="match_parent"
++                android:layout_height="55dp"
++                android:background="@drawable/edit_text_background"
++                android:inputType="textPassword"
++                android:layout_below="@+id/textview1"
++                android:padding="10dp"
++                android:textSize="30dp" />
+     </LinearLayout>
+ 
+-    <Button
+-        android:id="@+id/click"
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:text="Login"
+-        android:textSize="18sp"
+-        android:padding="10dp"
+-        android:background="@drawable/button_background"
+-        android:textColor="#fff"
+-        android:layout_marginTop="20dp"
+-        android:layout_marginLeft="20dp"
+-        android:layout_marginRight="20dp" />
++
++        <com.google.android.material.button.MaterialButton
++            android:id="@+id/click"
++            android:layout_width="250dp"
++            android:layout_gravity="center"
++            android:layout_marginTop="29dp"
++            android:layout_height="wrap_content"
++            android:layout_below="@+id/password"
++            android:text="LOGIN"
++            android:fontFamily="@font/poppins_regular"
++            android:textSize="30sp"
++            app:cornerRadius="9dp" />
+ 
+-    <TextView
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="Don't have an account? Sign up"
+-        android:textSize="16sp"
+-        android:textColor="#666"
+-        android:layout_marginTop="20dp"
+-        android:layout_gravity="center_horizontal" />
+-<TextView
+-    android:layout_width="wrap_content"
+-    android:layout_height="wrap_content"
+-    android:id="@+id/signup"
+-    android:text="Signup"
+-    android:textColor="@color/cme"
+-    android:padding="10dp"
+-    android:layout_marginLeft="150dp"
+-    android:layout_marginTop="10dp" />
++        <TextView
++            android:id="@+id/signup"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="150dp"
++            android:layout_marginTop="10dp"
++            android:layout_below="@+id/click"
++            android:layout_centerInParent="true"
++            android:padding="10dp"
++            android:text="Signup" />
+ 
+-
+-</LinearLayout>
+\ No newline at end of file
++    </LinearLayout>
++</RelativeLayout>
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\r\n    <!-- Base application theme. -->\r\n    <style name=\"Base.Theme.Education\" parent=\"Theme.Material3.DayNight.NoActionBar\">\r\n        <!-- Customize your light theme here. -->\r\n        <!-- <item name=\"colorPrimary\">@color/my_light_primary</item> -->\r\n    </style>\r\n\r\n    <style name=\"Theme.Education\" parent=\"Base.Theme.Education\" />\r\n</resources>
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+--- a/app/src/main/res/values/themes.xml	(revision 092c3514e054570f96761f2377be98fe8ff396a7)
++++ b/app/src/main/res/values/themes.xml	(date 1748691602213)
+@@ -5,5 +5,9 @@
+         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+     </style>
+ 
+-    <style name="Theme.Education" parent="Base.Theme.Education" />
++    <style name="Theme.Education" parent="Base.Theme.Education" >
++    <item name="colorPrimary">#000000</item>
++    <item name="colorPrimaryDark">#000000</item>
++    <item name="colorAccent">@color/colorAccent</item>
++    </style>
+ </resources>
+\ No newline at end of file
+Index: app/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n\r\n    alias(libs.plugins.android.application)\r\n    alias(libs.plugins.google.gms.google.services)\r\n}\r\n\r\nandroid {\r\n    namespace = \"com.example.education\"\r\n    compileSdk = 34\r\n\r\n    defaultConfig {\r\n        applicationId = \"com.example.education\"\r\n        minSdk = 24\r\n        targetSdk = 34\r\n        versionCode = 1\r\n        versionName = \"1.0\"\r\n\r\n        testInstrumentationRunner = \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            isMinifyEnabled = false\r\n            proguardFiles(\r\n                getDefaultProguardFile(\"proguard-android-optimize.txt\"),\r\n                \"proguard-rules.pro\"\r\n            )\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility = JavaVersion.VERSION_1_8\r\n        targetCompatibility = JavaVersion.VERSION_1_8\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation(libs.appcompat)\r\n    implementation(libs.material)\r\n    implementation(libs.activity)\r\n    implementation(libs.constraintlayout)\r\n    implementation (\"de.hdodenhof:circleimageview:3.1.0\")\r\n    implementation(platform(\"com.google.firebase:firebase-bom:33.1.2\"))\r\n    implementation(\"com.google.firebase:firebase-analytics\")\r\n    implementation (\"com.google.android.material:material:1.9.0\")// Update to the latest version\r\n    implementation (\"com.squareup.retrofit2:retrofit:2.9.0\")\r\n    implementation (\"com.squareup.retrofit2:converter-gson:2.9.0\")\r\n    implementation (\"androidx.viewpager2:viewpager2:1.0.0\")\r\n\r\n//    implementation (\"com.airbnb.lottie:lottie:4.2.2\") //error showing change the version\r\n    implementation (\"com.github.barteksc:android-pdf-viewer:2.8.2\")\r\n    implementation(libs.firebase.auth)\r\n    implementation(libs.firebase.database)\r\n    implementation(libs.firebase.storage)\r\n    testImplementation(libs.junit)\r\n    androidTestImplementation(libs.ext.junit)\r\n    androidTestImplementation(libs.espresso.core)\r\n}
+===================================================================
+diff --git a/app/build.gradle.kts b/app/build.gradle.kts
+--- a/app/build.gradle.kts	(revision 092c3514e054570f96761f2377be98fe8ff396a7)
++++ b/app/build.gradle.kts	(date 1748360334770)
+@@ -6,7 +6,7 @@
+ 
+ android {
+     namespace = "com.example.education"
+-    compileSdk = 34
++    compileSdk = 35
+ 
+     defaultConfig {
+         applicationId = "com.example.education"
+@@ -31,6 +31,7 @@
+         sourceCompatibility = JavaVersion.VERSION_1_8
+         targetCompatibility = JavaVersion.VERSION_1_8
+     }
++
+ }
+ 
+ dependencies {
+@@ -42,13 +43,15 @@
+     implementation ("de.hdodenhof:circleimageview:3.1.0")
+     implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
+     implementation("com.google.firebase:firebase-analytics")
+-    implementation ("com.google.android.material:material:1.9.0")// Update to the latest version
++    implementation ("com.google.android.material:material:1.9.0")
+     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+     implementation ("androidx.viewpager2:viewpager2:1.0.0")
+ 
+-//    implementation ("com.airbnb.lottie:lottie:4.2.2") //error showing change the version
+-    implementation ("com.github.barteksc:android-pdf-viewer:2.8.2")
++
++//Pdf viewver for the applicatikn
++    implementation ("com.github.mhiew:android-pdf-viewer:3.2.0-beta.3")
++
+     implementation(libs.firebase.auth)
+     implementation(libs.firebase.database)
+     implementation(libs.firebase.storage)
+Index: app/src/main/res/drawable/edit_text_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<shape xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:shape=\"rectangle\">\r\n    <solid android:color=\"#fff\" />\r\n    <stroke android:width=\"1dp\" android:color=\"#ddd\" />\r\n    <corners android:radius=\"5dp\" />\r\n</shape>
+===================================================================
+diff --git a/app/src/main/res/drawable/edit_text_background.xml b/app/src/main/res/drawable/edit_text_background.xml
+--- a/app/src/main/res/drawable/edit_text_background.xml	(revision 092c3514e054570f96761f2377be98fe8ff396a7)
++++ b/app/src/main/res/drawable/edit_text_background.xml	(date 1748693836535)
+@@ -2,6 +2,6 @@
+ <shape xmlns:android="http://schemas.android.com/apk/res/android"
+     android:shape="rectangle">
+     <solid android:color="#fff" />
+-    <stroke android:width="1dp" android:color="#ddd" />
++    <stroke android:width="2dp" android:color="#000000" />
+     <corners android:radius="5dp" />
+ </shape>
+\ No newline at end of file
+Index: app/src/main/res/drawable/button_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><ripple xmlns:android=\"http://schemas.android.com/apk/res/android\" android:color=\"?attr/colorControlHighlight\">\r\n    <item android:id=\"@android:id/mask\">\r\n        <shape android:shape=\"rectangle\">\r\n            <solid android:color=\"@color/colorAccent\"/>\r\n            <corners android:radius=\"12dp\"/>\r\n        </shape>\r\n    </item>\r\n    <item android:id=\"@+id/mask1\">\r\n        <shape android:shape=\"rectangle\">\r\n\r\n            <solid android:color=\"@color/colorPrimary\"/>\r\n            <corners android:radius=\"20dp\"/>\r\n        </shape>\r\n    </item>\r\n</ripple>\r\n
+===================================================================
+diff --git a/app/src/main/res/drawable/button_background.xml b/app/src/main/res/drawable/button_background.xml
+--- a/app/src/main/res/drawable/button_background.xml	(revision 092c3514e054570f96761f2377be98fe8ff396a7)
++++ b/app/src/main/res/drawable/button_background.xml	(date 1748679692523)
+@@ -1,15 +1,6 @@
+-<ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="?attr/colorControlHighlight">
+-    <item android:id="@android:id/mask">
+-        <shape android:shape="rectangle">
+-            <solid android:color="@color/colorAccent"/>
+-            <corners android:radius="12dp"/>
+-        </shape>
+-    </item>
+-    <item android:id="@+id/mask1">
+-        <shape android:shape="rectangle">
+-
+-            <solid android:color="@color/colorPrimary"/>
+-            <corners android:radius="20dp"/>
+-        </shape>
+-    </item>
+-</ripple>
++<shape xmlns:android="http://schemas.android.com/apk/res/android"
++    android:shape="rectangle">
++
++    <solid android:color="@color/Thirdary" /> <!-- or any color -->
++    <corners android:radius="0dp" /> <!-- removes rounded corners -->
++</shape>
+Index: app/src/main/java/com/example/education/SplashActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.education;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.os.Handler;\r\nimport android.view.animation.Animation;\r\nimport android.view.animation.AnimationUtils;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.activity.EdgeToEdge;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.core.graphics.Insets;\r\nimport androidx.core.view.ViewCompat;\r\nimport androidx.core.view.WindowInsetsCompat;\r\n\r\npublic class SplashActivity extends AppCompatActivity {\r\nprivate ImageView logoimg;\r\nprivate  TextView logoname,logobutton;\r\nAnimation topAnim,botomAnim;\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate ( savedInstanceState );\r\n        EdgeToEdge.enable ( this );\r\n        setContentView ( R.layout.activity_splash );\r\n        ViewCompat.setOnApplyWindowInsetsListener ( findViewById ( R.id.main ), (v, insets) -> {\r\n            Insets systemBars = insets.getInsets ( WindowInsetsCompat.Type.systemBars ( ) );\r\n            v.setPadding ( systemBars.left, systemBars.top, systemBars.right, systemBars.bottom );\r\n            return insets;\r\n        } );\r\n        logoimg=findViewById ( R.id.imglogo );\r\n        logoname=findViewById ( R.id.logoname );\r\n        logobutton=findViewById ( R.id.logobottom );\r\n\r\n\r\n        topAnim= AnimationUtils.loadAnimation ( this,R.anim.topanim );\r\n        botomAnim=AnimationUtils.loadAnimation ( this,R.anim.botomanim );\r\n\r\n        logoimg.setAnimation ( topAnim );\r\n        logoname.setAnimation ( topAnim );\r\n        logobutton.setAnimation ( botomAnim );\r\n\r\n\r\n\r\n        new Handler ().postDelayed( new Runnable() {\r\n            @Override\r\n            public void run() {\r\n                Intent splash = new Intent( SplashActivity.this , login.class);\r\n                startActivity(splash);\r\n                finish ();\r\n            }\r\n        }, 3000);\r\n\r\n    }\r\n    }
+===================================================================
+diff --git a/app/src/main/java/com/example/education/SplashActivity.java b/app/src/main/java/com/example/education/SplashActivity.java
+--- a/app/src/main/java/com/example/education/SplashActivity.java	(revision 092c3514e054570f96761f2377be98fe8ff396a7)
++++ b/app/src/main/java/com/example/education/SplashActivity.java	(date 1748681215937)
+@@ -45,7 +45,7 @@
+         new Handler ().postDelayed( new Runnable() {
+             @Override
+             public void run() {
+-                Intent splash = new Intent( SplashActivity.this , login.class);
++                Intent splash = new Intent( SplashActivity.this , Welcome_Screen.class);
+                 startActivity(splash);
+                 finish ();
+             }
+Index: app/src/main/res/layout/activity_signup.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:orientation=\"vertical\"\r\n    android:gravity=\"center\"\r\n    android:id=\"@+id/main\"\r\n    tools:context=\".signup\"\r\n    android:background=\"@color/background_color\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"vertical\"\r\n        android:padding=\"20dp\"\r\n        android:gravity=\"center\">\r\n\r\n\r\n        <de.hdodenhof.circleimageview.CircleImageView\r\n            android:id=\"@+id/rg_profileImg\"\r\n            android:layout_width=\"151dp\"\r\n            android:layout_height=\"130dp\"\r\n            android:src=\"@drawable/user\"\r\n            android:layout_gravity=\"center\"\r\n            android:layout_marginTop=\"10dp\"/>\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:textAlignment=\"center\"\r\n            android:text=\"+Add photo\"/>\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Create Account\"\r\n            android:textSize=\"32sp\"\r\n            android:textColor=\"#333\"\r\n            android:fontFamily=\"sans-serif-black\"\r\n            android:layout_marginTop=\"10dp\" />\r\n\r\n        <!-- Username Input Field -->\r\n        <EditText\r\n            android:id=\"@+id/rgusername\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:hint=\"Username\"\r\n            android:inputType=\"text\"\r\n            android:textSize=\"20sp\"\r\n            android:padding=\"16dp\"\r\n            android:background=\"@drawable/edit_text_background\"\r\n        android:textColor=\"#333\"\r\n        android:textColorHint=\"#999\"\r\n        android:layout_marginTop=\"10dp\" />\r\n\r\n        <!-- Email Input Field -->\r\n        <EditText\r\n            android:id=\"@+id/rgemail\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:hint=\"Email\"\r\n            android:inputType=\"textEmailAddress\"\r\n            android:textSize=\"20sp\"\r\n            android:padding=\"16dp\"\r\n            android:background=\"@drawable/edit_text_background\"\r\n        android:textColor=\"#333\"\r\n        android:textColorHint=\"#999\"\r\n        android:layout_marginTop=\"10dp\" />\r\n        <EditText\r\n            android:id=\"@+id/college\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:hint=\"Enter your college name\"\r\n            android:inputType=\"textLongMessage\"\r\n            android:textSize=\"20sp\"\r\n            android:padding=\"16dp\"\r\n            android:background=\"@drawable/edit_text_background\"\r\n            android:textColor=\"#333\"\r\n            android:textColorHint=\"#999\"\r\n            android:layout_marginTop=\"10dp\" />\r\n        <EditText\r\n            android:id=\"@+id/rgnum\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:hint=\"phone number\"\r\n            android:inputType=\"numberDecimal\"\r\n            android:textSize=\"20sp\"\r\n            android:padding=\"16dp\"\r\n            android:background=\"@drawable/edit_text_background\"\r\n            android:textColor=\"#333\"\r\n            android:textColorHint=\"#999\"\r\n            android:layout_marginTop=\"10dp\" />\r\n\r\n        <!-- Password Input Field -->\r\n        <EditText\r\n            android:id=\"@+id/rgPassword\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:hint=\"Password\"\r\n            android:inputType=\"textPassword\"\r\n            android:textSize=\"20sp\"\r\n            android:padding=\"16dp\"\r\n            android:background=\"@drawable/edit_text_background\"\r\n            android:textColorHint=\"#999\"\r\n            android:layout_marginTop=\"10dp\" />\r\n\r\n\r\n        <!-- Confirm Password Input Field -->\r\n        <EditText\r\n            android:id=\"@+id/rgrePassword\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:hint=\"Re-Password\"\r\n            android:inputType=\"textPassword\"\r\n            android:textSize=\"21sp\"\r\n            android:padding=\"10dp\"\r\n            android:background=\"@drawable/edit_text_background\"\r\n            android:textColor=\"#333\"\r\n            android:textColorHint=\"#999\"\r\n            android:layout_marginTop=\"10dp\" />\r\n        <!-- Sign Up Button -->\r\n        <Button\r\n            android:id=\"@+id/signupbutton\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Sign Up\"\r\n            android:textSize=\"10sp\"\r\n            android:background=\"@drawable/button_background\"\r\n            android:textColor=\"#fff\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:layout_marginLeft=\"20dp\"\r\n            android:layout_marginRight=\"10dp\" />\r\n\r\n        <!-- Login Link -->\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:id=\"@+id/loginbut\"\r\n            android:text=\"Already have an account?Login\"\r\n            android:textColor=\"#0E0C0C\"\r\n            android:textStyle=\"bold\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:padding=\"16dp\"\r\n            android:layout_gravity=\"center_horizontal\"\r\n            android:onClick=\"navigateToLogin\" />\r\n\r\n    </LinearLayout>\r\n</ScrollView>\r\n
+===================================================================
+diff --git a/app/src/main/res/layout/activity_signup.xml b/app/src/main/res/layout/activity_signup.xml
+--- a/app/src/main/res/layout/activity_signup.xml	(revision 092c3514e054570f96761f2377be98fe8ff396a7)
++++ b/app/src/main/res/layout/activity_signup.xml	(date 1748677744666)
+@@ -13,96 +13,100 @@
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
++        android:gravity="center"
+         android:orientation="vertical"
+-        android:padding="20dp"
+-        android:gravity="center">
++        android:padding="20dp">
+ 
+ 
+         <de.hdodenhof.circleimageview.CircleImageView
+             android:id="@+id/rg_profileImg"
+             android:layout_width="151dp"
+             android:layout_height="130dp"
+-            android:src="@drawable/user"
+             android:layout_gravity="center"
+-            android:layout_marginTop="10dp"/>
++            android:layout_marginTop="10dp"
++            android:src="@drawable/user" />
++
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+-            android:textAlignment="center"
+-            android:text="+Add photo"/>
++            android:text="+Add photo"
++            android:textAlignment="center" />
++
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
++            android:layout_marginTop="10dp"
++            android:fontFamily="sans-serif-black"
+             android:text="Create Account"
+-            android:textSize="32sp"
+             android:textColor="#333"
+-            android:fontFamily="sans-serif-black"
+-            android:layout_marginTop="10dp" />
++            android:textSize="32sp" />
+ 
+         <!-- Username Input Field -->
+         <EditText
+             android:id="@+id/rgusername"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
++            android:layout_marginTop="10dp"
++            android:background="@drawable/edit_text_background"
+             android:hint="Username"
+             android:inputType="text"
+-            android:textSize="20sp"
+             android:padding="16dp"
+-            android:background="@drawable/edit_text_background"
+-        android:textColor="#333"
+-        android:textColorHint="#999"
+-        android:layout_marginTop="10dp" />
++            android:textColor="#333"
++            android:textColorHint="#999"
++            android:textSize="20sp" />
+ 
+         <!-- Email Input Field -->
+         <EditText
+             android:id="@+id/rgemail"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
++            android:layout_marginTop="10dp"
++            android:background="@drawable/edit_text_background"
+             android:hint="Email"
+             android:inputType="textEmailAddress"
+-            android:textSize="20sp"
+             android:padding="16dp"
+-            android:background="@drawable/edit_text_background"
+-        android:textColor="#333"
+-        android:textColorHint="#999"
+-        android:layout_marginTop="10dp" />
++            android:textColor="#333"
++            android:textColorHint="#999"
++            android:textSize="20sp" />
++
+         <EditText
+             android:id="@+id/college"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
++            android:layout_marginTop="10dp"
++            android:background="@drawable/edit_text_background"
+             android:hint="Enter your college name"
+             android:inputType="textLongMessage"
+-            android:textSize="20sp"
+             android:padding="16dp"
+-            android:background="@drawable/edit_text_background"
+             android:textColor="#333"
+             android:textColorHint="#999"
+-            android:layout_marginTop="10dp" />
++            android:textSize="20sp" />
++
+         <EditText
+             android:id="@+id/rgnum"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
++            android:layout_marginTop="10dp"
++            android:background="@drawable/edit_text_background"
+             android:hint="phone number"
+             android:inputType="numberDecimal"
+-            android:textSize="20sp"
+             android:padding="16dp"
+-            android:background="@drawable/edit_text_background"
+             android:textColor="#333"
+             android:textColorHint="#999"
+-            android:layout_marginTop="10dp" />
++            android:textSize="20sp" />
+ 
+         <!-- Password Input Field -->
+         <EditText
+             android:id="@+id/rgPassword"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
++            android:layout_marginTop="10dp"
++            android:background="@drawable/edit_text_background"
+             android:hint="Password"
+             android:inputType="textPassword"
+-            android:textSize="20sp"
+             android:padding="16dp"
+-            android:background="@drawable/edit_text_background"
+             android:textColorHint="#999"
+-            android:layout_marginTop="10dp" />
++            android:textSize="20sp" />
+ 
+ 
+         <!-- Confirm Password Input Field -->
+@@ -110,39 +114,39 @@
+             android:id="@+id/rgrePassword"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
++            android:layout_marginTop="10dp"
++            android:background="@drawable/edit_text_background"
+             android:hint="Re-Password"
+             android:inputType="textPassword"
+-            android:textSize="21sp"
+             android:padding="10dp"
+-            android:background="@drawable/edit_text_background"
+             android:textColor="#333"
+             android:textColorHint="#999"
+-            android:layout_marginTop="10dp" />
++            android:textSize="21sp" />
+         <!-- Sign Up Button -->
+         <Button
+             android:id="@+id/signupbutton"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+-            android:text="Sign Up"
+-            android:textSize="10sp"
++            android:layout_marginLeft="20dp"
++            android:layout_marginTop="30dp"
++            android:layout_marginRight="10dp"
+             android:background="@drawable/button_background"
++            android:text="Sign Up"
+             android:textColor="#fff"
+-            android:layout_marginTop="30dp"
+-            android:layout_marginLeft="20dp"
+-            android:layout_marginRight="10dp" />
++            android:textSize="10sp" />
+ 
+         <!-- Login Link -->
+         <TextView
++            android:id="@+id/loginbut"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+-            android:id="@+id/loginbut"
++            android:layout_gravity="center_horizontal"
++            android:layout_marginTop="20dp"
++            android:onClick="navigateToLogin"
++            android:padding="16dp"
+             android:text="Already have an account?Login"
+             android:textColor="#0E0C0C"
+-            android:textStyle="bold"
+-            android:layout_marginTop="20dp"
+-            android:padding="16dp"
+-            android:layout_gravity="center_horizontal"
+-            android:onClick="navigateToLogin" />
++            android:textStyle="bold" />
+ 
+     </LinearLayout>
+ </ScrollView>
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\">\r\n\r\n    <uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />\r\n    <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.Education\"\r\n        tools:targetApi=\"31\">\r\n        <activity\r\n            android:name=\".csec23questions\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".EEE5THSEM2023\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".EEE5THSEM\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".EEE4THSEMSEM2023\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".EEE4THSEMSEM2022\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".EEE4THSEM\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".EEE2NDSEM2023\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".EEE2NDSEM2022\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".EEE2NDSEM\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".EEE1STSEM2023\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".EEE1STSEM2022\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".EEE1STSEM2021\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".EEE1STSEM\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".regularc20EEEbranchlist\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".ECE3RDSEM2023\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".ECE3RDSEM2022\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".ECE2NDSEM\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".ECE1STSEM2023\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".ECE1STSEM2022\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".ECE1STSEM2021\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".regularc20ECEbranchlist\"\r\n            android:exported=\"false\" />\r\n        <activity android:name=\".ECE1STSEM\" />\r\n        <activity\r\n            android:name=\".CME5THSEM2023\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".CME5THSEM\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".CME4THSEM2023\"\r\n            android:exported=\"false\" /> <!-- <activity -->\r\n        <!-- android:name=\".CME4THSEM2022\" -->\r\n        <!-- android:exported=\"false\" /> -->\r\n        <activity\r\n            android:name=\".CME4THSEM\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".CME3RDSEM2022\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".CME3RDSEM2021\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".CME3RDSEM\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".regularc20sem3\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".regularc20branchlist\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".ecec23questions\"\r\n            android:exported=\"false\" />\r\n        <activity android:name=\".c23question\" />\r\n        <activity\r\n            android:name=\".c22question\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".drawingc23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".prgramc23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".BCEc23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".chemistryc23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".physicsc23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".M1c23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Englishc23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".drawingc22\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".prgramc22\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".BCEc22\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".chemistryc22\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".physicsc22\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".M1c22\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Englishc22\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".drawingc21\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".prgramc21\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".BCEc21\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".chemistryc21\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".C21question\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".physicsc21\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".M1c21\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Englishc21\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".JobGuidence\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".courcesGuidence\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".carrierGuidence\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".sectorGuidence\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".aboutus\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Giudence\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".c16resouces\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".c20resouces\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".civilcurriculamc23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".mechcurriculamc23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".eeecurriculamc23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".ececurriculamc23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".cmecurriculamc23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".civilcurriculam\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".mechcurriculam\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".eeecurriculam\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".ececurriculam\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".cmecurriculam\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".guidencec20\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".guidencec23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".scholor\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".internships\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".cmec23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".cmec16\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".c2019\"\r\n            android:exported=\"false\" />\r\n        <activity android:name=\".cmec20\" />\r\n        <activity\r\n            android:name=\".regularc20\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".regulationc23\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".regulationc16\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".chatbot\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".diploma_question\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".ecet_question\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".signup\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".question_papers\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".login\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".curriculam\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".youtube\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".SplashActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n        <activity android:name=\".MainActivity\" />\r\n    </application>\r\n\r\n</manifest>
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 092c3514e054570f96761f2377be98fe8ff396a7)
++++ b/app/src/main/AndroidManifest.xml	(date 1748691974082)
+@@ -14,8 +14,11 @@
+         android:label="@string/app_name"
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+-        android:theme="@style/Theme.Education"
+-        tools:targetApi="31">
++        android:theme="@style/Theme.Education">
++
++        <activity
++            android:name=".Welcome_Screen"
++            android:exported="false" />
+         <activity
+             android:name=".csec23questions"
+             android:exported="false" />
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <color name=\"colorPrimary\">#6200EE</color>\r\n    <color name=\"colorPrimaryDark\">#3700B3</color>\r\n    <color name=\"colorAccent\">#03DAC5</color>\r\n    <color name=\"background_color\">#F5F5F5</color>\r\n    <color name=\"fab_color\">#FF4081</color>\r\n    <color name=\"splash\">#C60303</color>\r\n    <color name=\"textBackground\">#3e2779</color>\r\n    <color name=\"inputBackground\">#b9a2f5</color>\r\n    <color name=\"sent\">#a044d5</color>\r\n    <color name=\"received\">#413269</color>\r\n    <color name=\"white\">#ffff</color>\r\n    <color name=\"chatback\">#1E1C1C</color>\r\n    <color name=\"cme\">#E64E4E</color>\r\n    <color name=\"ece\">#3BF143</color>\r\n    <color name=\"eee\">#52C7FB</color>\r\n    <color name=\"mec\">#D3B454</color>\r\n    <color name=\"civil\">#A0BCB9</color>\r\n    <color name=\"question\">#A7C0C3</color>\r\n    <color name=\"re\">#F08080</color>\r\n    <color name=\"background_color1\">#F0F4F8</color> <!-- Light grayish-blue background -->\r\n    <color name=\"title_color\">#FF5722</color> <!-- Vibrant orange-red for the title -->\r\n    <color name=\"scholarship_color\">#00796B</color> <!-- Teal color for scholarship text -->\r\n    <color name=\"white1\">#FFFFFF</color> <!-- Pure white for card background -->\r\n    <color name=\"card_background\">#B6D7DC</color>\r\n    <color name=\"buttin\">#A0BCB9</color>\r\n</resources>\r\n
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+--- a/app/src/main/res/values/colors.xml	(revision 092c3514e054570f96761f2377be98fe8ff396a7)
++++ b/app/src/main/res/values/colors.xml	(date 1748691402172)
+@@ -1,6 +1,7 @@
+ <resources>
+-    <color name="colorPrimary">#6200EE</color>
+-    <color name="colorPrimaryDark">#3700B3</color>
++
++    <color name="colorPrimary">#000000</color>
++    <color name="colorPrimaryDark">#000000</color>
+     <color name="colorAccent">#03DAC5</color>
+     <color name="background_color">#F5F5F5</color>
+     <color name="fab_color">#FF4081</color>
+@@ -24,4 +25,9 @@
+     <color name="white1">#FFFFFF</color> <!-- Pure white for card background -->
+     <color name="card_background">#B6D7DC</color>
+     <color name="buttin">#A0BCB9</color>
++
++<!--    font color for the app-->
++    <color name="Thirdary">#F6000000</color>
++    <color name="secondary">#FFFFFF</color>
++
+ </resources>
