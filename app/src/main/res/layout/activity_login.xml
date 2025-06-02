@@ -30,15 +30,26 @@
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:id="@+id/layout"
-        android:layout_below="@+id/ttoolbar"
-        >
-
+        android:layout_below="@+id/ttoolbar">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Welcome Back"
+    android:fontFamily="@font/poppins_bold"
+    android:textSize="32sp"
+    android:gravity="center"
+    android:textColor="@color/Thirdary"
+    android:shadowColor="@color/shadow"
+    android:shadowDx="2"
+    android:shadowDy="2"
+    android:shadowRadius="3"/>
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="285dp"
+            android:layout_width="wrap_content"
+            android:layout_height="218dp"
+            android:layout_gravity="center"
             android:id="@+id/loginlogo"
             android:layout_marginBottom="15dp"
-            android:src="@drawable/login"
+            android:src="@drawable/login_new"
             android:layout_below="@id/layout"/>
 
     <LinearLayout
@@ -53,9 +64,10 @@
                 android:layout_height="wrap_content"
                 android:text="Phone number or Email"
                 android:textSize="20sp"
+
                 android:layout_below="@id/forr_phone"
                 android:fontFamily="@font/poppins_regular"
-                android:textColor="#333" />
+                android:textColor="@color/Thirdary" />
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
@@ -75,6 +87,7 @@
             <TextView
                 android:id="@+id/textview1"
                 android:textSize="20sp"
+                android:textColor="@color/Thirdary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_regular"
@@ -98,23 +111,118 @@
             android:layout_width="250dp"
             android:layout_gravity="center"
             android:layout_marginTop="29dp"
-            android:layout_height="wrap_content"
+            android:layout_height="57dp"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowColor="@color/shadow"
+            android:shadowRadius="3"
             android:layout_below="@+id/password"
             android:text="LOGIN"
+
+            android:textColor="@color/secondary"
             android:fontFamily="@font/poppins_regular"
             android:textSize="30sp"
             app:cornerRadius="9dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
 
-        <TextView
-            android:id="@+id/signup"
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="2"
+                android:background="@color/Thirdary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="OR"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#000"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="2"
+                android:background="@color/Thirdary" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/click"
-            android:layout_centerInParent="true"
-            android:padding="10dp"
-            android:text="Signup" />
+            android:rowCount="1"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:useDefaultMargins="true">
 
+            <!-- SIGN UP Button -->
+            <TextView
+                android:id="@+id/signup"
+                android:layout_column="0"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:shadowDx="2"
+                android:shadowColor="@color/shadow"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:layout_marginEnd="46dp"
+                android:fontFamily="@font/poppins_regular"
+                android:background="@drawable/rectangular_background"
+                android:text="SIGN UP"
+                android:textColor="@color/Thirdary" />
+
+            <!-- CONTINUE WITH GOOGLE Button -->
+            <LinearLayout
+                android:id="@+id/btn_google"
+                android:layout_column="1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/rectangular_background"
+                android:paddingStart="10dp"
+
+                android:layout_marginStart="35dp"
+                android:paddingEnd="10dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/google"
+                    android:contentDescription="Google Logo"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/googleSignup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="3"
+                    android:shadowColor="@color/shadow"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="CONTINUE\nWITH GOOGLE"
+                    android:textColor="@color/Thirdary" />
+            </LinearLayout>
+        </GridLayout>
     </LinearLayout>
+
+
+
+</LinearLayout>
 </RelativeLayout>

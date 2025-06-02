@@ -45,7 +45,7 @@ Animation topAnim,botomAnim;
         new Handler ().postDelayed( new Runnable() {
             @Override
             public void run() {
-                Intent splash = new Intent( SplashActivity.this , Welcome_Screen.class);
+                Intent splash = new Intent( SplashActivity.this , login.class);
                 startActivity(splash);
                 finish ();
             }
