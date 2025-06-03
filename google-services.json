@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "28386282065",
+    "firebase_url": "https://splash-screeen-3f2a4-default-rtdb.firebaseio.com",
+    "project_id": "splash-screeen-3f2a4",
+    "storage_bucket": "splash-screeen-3f2a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28386282065:android:96ba64752053dbac7e0670",
+        "android_client_info": {
+          "package_name": "com.gromagz.education"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28386282065-hb92isqlnn54h642e22a18jneq1ld6no.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gromagz.education",
+            "certificate_hash": "1c2bc149dd7244a3e60c505789be3c5773c7cfbe"
+          }
+        },
+        {
+          "client_id": "28386282065-2fg9f6pj1alnmibnrfkac2eflshrdo7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWzi8zeGSzGFxELebl5fGXroE-pgZyLLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28386282065-2fg9f6pj1alnmibnrfkac2eflshrdo7d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gromagz.education">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -15,287 +16,286 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Education">
-
         <activity
-            android:name=".Welcome_Screen"
+            android:name="com.gromagz.education.Welcome_Screen"
             android:exported="false" />
         <activity
-            android:name=".csec23questions"
+            android:name="com.gromagz.education.csec23questions"
             android:exported="false" />
         <activity
-            android:name=".EEE5THSEM2023"
+            android:name="com.gromagz.education.EEE5THSEM2023"
             android:exported="false" />
         <activity
-            android:name=".EEE5THSEM"
+            android:name="com.gromagz.education.EEE5THSEM"
             android:exported="false" />
         <activity
-            android:name=".EEE4THSEMSEM2023"
+            android:name="com.gromagz.education.EEE4THSEMSEM2023"
             android:exported="false" />
         <activity
-            android:name=".EEE4THSEMSEM2022"
+            android:name="com.gromagz.education.EEE4THSEMSEM2022"
             android:exported="false" />
         <activity
-            android:name=".EEE4THSEM"
+            android:name="com.gromagz.education.EEE4THSEM"
             android:exported="false" />
         <activity
-            android:name=".EEE2NDSEM2023"
+            android:name="com.gromagz.education.EEE2NDSEM2023"
             android:exported="false" />
         <activity
-            android:name=".EEE2NDSEM2022"
+            android:name="com.gromagz.education.EEE2NDSEM2022"
             android:exported="false" />
         <activity
-            android:name=".EEE2NDSEM"
+            android:name="com.gromagz.education.EEE2NDSEM"
             android:exported="false" />
         <activity
-            android:name=".EEE1STSEM2023"
+            android:name="com.gromagz.education.EEE1STSEM2023"
             android:exported="false" />
         <activity
-            android:name=".EEE1STSEM2022"
+            android:name="com.gromagz.education.EEE1STSEM2022"
             android:exported="false" />
         <activity
-            android:name=".EEE1STSEM2021"
+            android:name="com.gromagz.education.EEE1STSEM2021"
             android:exported="false" />
         <activity
-            android:name=".EEE1STSEM"
+            android:name="com.gromagz.education.EEE1STSEM"
             android:exported="false" />
         <activity
-            android:name=".regularc20EEEbranchlist"
+            android:name="com.gromagz.education.regularc20EEEbranchlist"
             android:exported="false" />
         <activity
-            android:name=".ECE3RDSEM2023"
+            android:name="com.gromagz.education.ECE3RDSEM2023"
             android:exported="false" />
         <activity
-            android:name=".ECE3RDSEM2022"
+            android:name="com.gromagz.education.ECE3RDSEM2022"
             android:exported="false" />
         <activity
-            android:name=".ECE2NDSEM"
+            android:name="com.gromagz.education.ECE2NDSEM"
             android:exported="false" />
         <activity
-            android:name=".ECE1STSEM2023"
+            android:name="com.gromagz.education.ECE1STSEM2023"
             android:exported="false" />
         <activity
-            android:name=".ECE1STSEM2022"
+            android:name="com.gromagz.education.ECE1STSEM2022"
             android:exported="false" />
         <activity
-            android:name=".ECE1STSEM2021"
+            android:name="com.gromagz.education.ECE1STSEM2021"
             android:exported="false" />
         <activity
-            android:name=".regularc20ECEbranchlist"
+            android:name="com.gromagz.education.regularc20ECEbranchlist"
             android:exported="false" />
-        <activity android:name=".ECE1STSEM" />
+        <activity android:name="com.gromagz.education.ECE1STSEM" />
         <activity
-            android:name=".CME5THSEM2023"
-            android:exported="false" />
-        <activity
-            android:name=".CME5THSEM"
+            android:name="com.gromagz.education.CME5THSEM2023"
             android:exported="false" />
         <activity
-            android:name=".CME4THSEM2023"
+            android:name="com.gromagz.education.CME5THSEM"
+            android:exported="false" />
+        <activity
+            android:name="com.gromagz.education.CME4THSEM2023"
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".CME4THSEM2022" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".CME4THSEM"
+            android:name="com.gromagz.education.CME4THSEM"
             android:exported="false" />
         <activity
-            android:name=".CME3RDSEM2022"
+            android:name="com.gromagz.education.CME3RDSEM2022"
             android:exported="false" />
         <activity
-            android:name=".CME3RDSEM2021"
+            android:name="com.gromagz.education.CME3RDSEM2021"
             android:exported="false" />
         <activity
-            android:name=".CME3RDSEM"
+            android:name="com.gromagz.education.CME3RDSEM"
             android:exported="false" />
         <activity
-            android:name=".regularc20sem3"
+            android:name="com.gromagz.education.regularc20sem3"
             android:exported="false" />
         <activity
-            android:name=".regularc20branchlist"
+            android:name="com.gromagz.education.regularc20branchlist"
             android:exported="false" />
         <activity
-            android:name=".ecec23questions"
+            android:name="com.gromagz.education.ecec23questions"
             android:exported="false" />
-        <activity android:name=".c23question" />
+        <activity android:name="com.gromagz.education.c23question" />
         <activity
-            android:name=".c22question"
+            android:name="com.gromagz.education.c22question"
             android:exported="false" />
         <activity
-            android:name=".drawingc23"
+            android:name="com.gromagz.education.drawingc23"
             android:exported="false" />
         <activity
-            android:name=".prgramc23"
+            android:name="com.gromagz.education.prgramc23"
             android:exported="false" />
         <activity
-            android:name=".BCEc23"
+            android:name="com.gromagz.education.BCEc23"
             android:exported="false" />
         <activity
-            android:name=".chemistryc23"
+            android:name="com.gromagz.education.chemistryc23"
             android:exported="false" />
         <activity
-            android:name=".physicsc23"
+            android:name="com.gromagz.education.physicsc23"
             android:exported="false" />
         <activity
-            android:name=".M1c23"
+            android:name="com.gromagz.education.M1c23"
             android:exported="false" />
         <activity
-            android:name=".Englishc23"
+            android:name="com.gromagz.education.Englishc23"
             android:exported="false" />
         <activity
-            android:name=".drawingc22"
+            android:name="com.gromagz.education.drawingc22"
             android:exported="false" />
         <activity
-            android:name=".prgramc22"
+            android:name="com.gromagz.education.prgramc22"
             android:exported="false" />
         <activity
-            android:name=".BCEc22"
+            android:name="com.gromagz.education.BCEc22"
             android:exported="false" />
         <activity
-            android:name=".chemistryc22"
+            android:name="com.gromagz.education.chemistryc22"
             android:exported="false" />
         <activity
-            android:name=".physicsc22"
+            android:name="com.gromagz.education.physicsc22"
             android:exported="false" />
         <activity
-            android:name=".M1c22"
+            android:name="com.gromagz.education.M1c22"
             android:exported="false" />
         <activity
-            android:name=".Englishc22"
+            android:name="com.gromagz.education.Englishc22"
             android:exported="false" />
         <activity
-            android:name=".drawingc21"
+            android:name="com.gromagz.education.drawingc21"
             android:exported="false" />
         <activity
-            android:name=".prgramc21"
+            android:name="com.gromagz.education.prgramc21"
             android:exported="false" />
         <activity
-            android:name=".BCEc21"
+            android:name="com.gromagz.education.BCEc21"
             android:exported="false" />
         <activity
-            android:name=".chemistryc21"
+            android:name="com.gromagz.education.chemistryc21"
             android:exported="false" />
         <activity
-            android:name=".C21question"
+            android:name="com.gromagz.education.C21question"
             android:exported="false" />
         <activity
-            android:name=".physicsc21"
+            android:name="com.gromagz.education.physicsc21"
             android:exported="false" />
         <activity
-            android:name=".M1c21"
+            android:name="com.gromagz.education.M1c21"
             android:exported="false" />
         <activity
-            android:name=".Englishc21"
+            android:name="com.gromagz.education.Englishc21"
             android:exported="false" />
         <activity
-            android:name=".JobGuidence"
+            android:name="com.gromagz.education.JobGuidence"
             android:exported="false" />
         <activity
-            android:name=".courcesGuidence"
+            android:name="com.gromagz.education.courcesGuidence"
             android:exported="false" />
         <activity
-            android:name=".carrierGuidence"
+            android:name="com.gromagz.education.carrierGuidence"
             android:exported="false" />
         <activity
-            android:name=".sectorGuidence"
+            android:name="com.gromagz.education.sectorGuidence"
             android:exported="false" />
         <activity
-            android:name=".aboutus"
+            android:name="com.gromagz.education.aboutus"
             android:exported="false" />
         <activity
-            android:name=".Giudence"
+            android:name="com.gromagz.education.Giudence"
             android:exported="false" />
         <activity
-            android:name=".c16resouces"
+            android:name="com.gromagz.education.c16resouces"
             android:exported="false" />
         <activity
-            android:name=".c20resouces"
+            android:name="com.gromagz.education.c20resouces"
             android:exported="false" />
         <activity
-            android:name=".civilcurriculamc23"
+            android:name="com.gromagz.education.civilcurriculamc23"
             android:exported="false" />
         <activity
-            android:name=".mechcurriculamc23"
+            android:name="com.gromagz.education.mechcurriculamc23"
             android:exported="false" />
         <activity
-            android:name=".eeecurriculamc23"
+            android:name="com.gromagz.education.eeecurriculamc23"
             android:exported="false" />
         <activity
-            android:name=".ececurriculamc23"
+            android:name="com.gromagz.education.ececurriculamc23"
             android:exported="false" />
         <activity
-            android:name=".cmecurriculamc23"
+            android:name="com.gromagz.education.cmecurriculamc23"
             android:exported="false" />
         <activity
-            android:name=".civilcurriculam"
+            android:name="com.gromagz.education.civilcurriculam"
             android:exported="false" />
         <activity
-            android:name=".mechcurriculam"
+            android:name="com.gromagz.education.mechcurriculam"
             android:exported="false" />
         <activity
-            android:name=".eeecurriculam"
+            android:name="com.gromagz.education.eeecurriculam"
             android:exported="false" />
         <activity
-            android:name=".ececurriculam"
+            android:name="com.gromagz.education.ececurriculam"
             android:exported="false" />
         <activity
-            android:name=".cmecurriculam"
+            android:name="com.gromagz.education.cmecurriculam"
             android:exported="false" />
         <activity
-            android:name=".guidencec20"
+            android:name="com.gromagz.education.guidencec20"
             android:exported="false" />
         <activity
-            android:name=".guidencec23"
+            android:name="com.gromagz.education.guidencec23"
             android:exported="false" />
         <activity
-            android:name=".scholor"
+            android:name="com.gromagz.education.scholor"
             android:exported="false" />
         <activity
-            android:name=".internships"
+            android:name="com.gromagz.education.internships"
             android:exported="false" />
         <activity
-            android:name=".cmec23"
+            android:name="com.gromagz.education.cmec23"
             android:exported="false" />
         <activity
-            android:name=".cmec16"
+            android:name="com.gromagz.education.cmec16"
             android:exported="false" />
         <activity
-            android:name=".c2019"
+            android:name="com.gromagz.education.c2019"
             android:exported="false" />
-        <activity android:name=".cmec20" />
+        <activity android:name="com.gromagz.education.cmec20" />
         <activity
-            android:name=".regularc20"
+            android:name="com.gromagz.education.regularc20"
             android:exported="false" />
         <activity
-            android:name=".regulationc23"
+            android:name="com.gromagz.education.regulationc23"
             android:exported="false" />
         <activity
-            android:name=".regulationc16"
+            android:name="com.gromagz.education.regulationc16"
             android:exported="false" />
         <activity
-            android:name=".chatbot"
+            android:name="com.gromagz.education.chatbot"
             android:exported="false" />
         <activity
-            android:name=".diploma_question"
+            android:name="com.gromagz.education.diploma_question"
             android:exported="false" />
         <activity
-            android:name=".ecet_question"
+            android:name="com.gromagz.education.ecet_question"
             android:exported="false" />
         <activity
-            android:name=".signup"
+            android:name="com.gromagz.education.signup"
             android:exported="false" />
         <activity
-            android:name=".question_papers"
+            android:name="com.gromagz.education.question_papers"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name="com.gromagz.education.login"
             android:exported="false" />
         <activity
-            android:name=".curriculam"
+            android:name="com.gromagz.education.curriculam"
             android:exported="false" />
         <activity
-            android:name=".youtube"
+            android:name="com.gromagz.education.youtube"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name="com.gromagz.education.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -303,7 +303,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.gromagz.education.MainActivity" />
     </application>
 
 </manifest>

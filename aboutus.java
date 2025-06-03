@@ -1,4 +1,4 @@
-package com.example.education;
+package com.gromagz.education;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -46,7 +46,7 @@ public class aboutus extends AppCompatActivity {
                 shareIntent.setType("text/plain");
                 String shareSubject = "Check out this Polytechnic Diploma!";
                 String shareBody = "Hey, I found this amazing Polytechnic Diploma content. Check it out! " +
-                        "https://play.google.com/store/apps/details?id=com.example.education";
+                        "https://play.google.com/store/apps/details?id=com.gromagz.education";
 
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
                 shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);

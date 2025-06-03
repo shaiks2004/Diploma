@@ -30,4 +30,8 @@
     <color name="Thirdary">#F6000000</color>
     <color name="secondary">#FFFFFF</color>
 
+    <color name="shadow">#353232</color>
+    <color name="buttons">#343434</color>
+
+
 </resources>

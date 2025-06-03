@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    tools:context=".login"
-    android:background="@color/secondary">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondary"
+    tools:context=".login">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/ttoolbar"
@@ -17,104 +16,221 @@
         android:background="@color/white"
         android:elevation="4dp"
         android:paddingEnd="16dp"
-        app:titleTextColor="@color/Thirdary"
-        android:theme="@style/ToolbarTheme">
-    </androidx.appcompat.widget.Toolbar>
+        android:theme="@style/ToolbarTheme"
+        app:titleTextColor="@color/Thirdary"></androidx.appcompat.widget.Toolbar>
+
     <LinearLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_below="@+id/ttoolbar"
+        android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:id="@+id/layout"
-        android:layout_below="@+id/ttoolbar"
-        >
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:shadowColor="@color/shadow"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Welcome Back"
+            android:textColor="@color/Thirdary"
+            android:textSize="32sp" />
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="285dp"
             android:id="@+id/loginlogo"
+            android:layout_width="wrap_content"
+            android:layout_height="218dp"
+            android:layout_below="@id/layout"
+            android:layout_gravity="center"
             android:layout_marginBottom="15dp"
-            android:src="@drawable/login"
-            android:layout_below="@id/layout"/>
+            android:src="@drawable/login_new" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/forr_phone"
-        android:layout_margin="5dp"
-        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/forr_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Phone number or Email"
-                android:textSize="20sp"
                 android:layout_below="@id/forr_phone"
                 android:fontFamily="@font/poppins_regular"
-                android:textColor="#333" />
+
+                android:text="Phone number or Email"
+                android:textColor="@color/Thirdary"
+                android:textSize="20sp" />
+
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:padding="10dp"
                 android:layout_below="@id/textview"
                 android:background="@drawable/edit_text_background"
                 android:inputType="textEmailAddress"
+                android:padding="10dp"
                 android:textSize="30sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/forr_password"
-        android:layout_margin="5dp"
-        android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/forr_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/textview1"
-                android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_regular"
                 android:layout_below="@+id/forr_password"
-                android:text="Password" />
+                android:fontFamily="@font/poppins_regular"
+                android:text="Password"
+                android:textColor="@color/Thirdary"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
+                android:layout_below="@+id/textview1"
                 android:background="@drawable/edit_text_background"
                 android:inputType="textPassword"
-                android:layout_below="@+id/textview1"
                 android:padding="10dp"
                 android:textSize="30dp" />
-    </LinearLayout>
+        </LinearLayout>
 
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/click"
             android:layout_width="250dp"
+            android:layout_height="57dp"
+            android:backgroundTint="@color/buttons"
+            android:layout_below="@+id/password"
             android:layout_gravity="center"
             android:layout_marginTop="29dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/password"
-            android:text="LOGIN"
             android:fontFamily="@font/poppins_regular"
+            android:shadowColor="@color/shadow"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+
+            android:text="LOGIN"
+            android:textColor="@color/secondary"
             android:textSize="30sp"
             app:cornerRadius="9dp" />
 
-        <TextView
-            android:id="@+id/signup"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/click"
-            android:layout_centerInParent="true"
-            android:padding="10dp"
-            android:text="Signup" />
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="2"
+                android:background="@color/Thirdary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="OR"
+                android:textColor="#000"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="2"
+                android:background="@color/Thirdary" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="false"
+                android:rowCount="1"
+                android:useDefaultMargins="true">
+
+                <!-- SIGN UP Button -->
+                <TextView
+                    android:id="@+id/signup"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_column="0"
+                    android:layout_marginEnd="46dp"
+                    android:background="@drawable/rectangular_background"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="3"
+                    android:text="SIGN UP"
+                    android:textColor="@color/Thirdary" />
+
+                <!-- CONTINUE WITH GOOGLE Button -->
+                <LinearLayout
+                    android:id="@+id/btn_google"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_column="1"
+                    android:layout_marginStart="35dp"
+                    android:background="@drawable/rectangular_background"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="Google Logo"
+                        android:src="@drawable/google" />
+
+                    <TextView
+                        android:id="@+id/googleSignup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins_regular"
+                        android:shadowColor="@color/shadow"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="3"
+                        android:text="CONTINUE\nWITH GOOGLE"
+                        android:textColor="@color/Thirdary" />
+                </LinearLayout>
+            </GridLayout>
+        </LinearLayout>
+
 
     </LinearLayout>
 </RelativeLayout>
