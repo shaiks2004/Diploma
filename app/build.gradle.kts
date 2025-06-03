@@ -6,10 +6,10 @@ plugins {
 }
 
 android {
-    namespace = "com.example.education"
+    namespace = "com.gromagz.education"
     compileSdk = 35
     defaultConfig {
-        applicationId = "com.example.education"
+        applicationId = "com.gromagz.education"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -55,12 +55,17 @@ dependencies {
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")
-    implementation ("com.google.android.gms:play-services-auth:20.7.0")
+//    implementation ("com.google.android.gms:play-services-auth:20.7.0")
 
 
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
 
+    // This includes GoogleIdTokenRequestOptions
+    implementation ("com.google.android.gms:play-services-auth:21.0.0") // Use the latest stable version
+
+    // If you are also using Firebase Auth, keep this:
+    implementation ("com.google.firebase:firebase-auth:22.3.1")
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
     implementation(libs.firebase.storage)

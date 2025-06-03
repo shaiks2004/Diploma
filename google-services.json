@@ -8,46 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:28386282065:android:a04f971b317ecd377e0670",
+        "mobilesdk_app_id": "1:28386282065:android:96ba64752053dbac7e0670",
         "android_client_info": {
           "package_name": "com.gromagz.education"
         }
       },
       "oauth_client": [
         {
-          "client_id": "28386282065-2fg9f6pj1alnmibnrfkac2eflshrdo7d.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCWzi8zeGSzGFxELebl5fGXroE-pgZyLLs"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "28386282065-2fg9f6pj1alnmibnrfkac2eflshrdo7d.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:28386282065:android:fff13ed1f037650e7e0670",
-        "android_client_info": {
-          "package_name": "com.example.splash_screeen"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "28386282065-jqr0scs48pdj4d02npd7clj1a3r2bcto.apps.googleusercontent.com",
+          "client_id": "28386282065-hb92isqlnn54h642e22a18jneq1ld6no.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.splash_screeen",
+            "package_name": "com.gromagz.education",
             "certificate_hash": "1c2bc149dd7244a3e60c505789be3c5773c7cfbe"
           }
         },
