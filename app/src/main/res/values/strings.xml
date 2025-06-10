@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">PAP</string>
+    <string name="app_name" translatable="false">Gromagz</string>
     <string name="btn1">Question Papers</string>
     <string name="btn2">Curriculum</string>
     <string name="btn3">Resources</string>

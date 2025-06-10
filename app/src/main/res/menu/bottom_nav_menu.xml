@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/bottom_nav_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/bottom_nav_search"
+        android:title="Search" />
+    <item
+        android:id="@+id/chatbot"
+        android:icon="@drawable/gemini_ai_star"
+
+        android:title="Magz" />
+    <item
+        android:id="@+id/resourses"
+        android:icon="@drawable/bottom_nav_resources"
+        android:title="Resources" />
+    <item
+        android:id="@+id/nav_community"
+        android:icon="@drawable/bottom_nav_community"
+        android:title="Community" />
+</menu>

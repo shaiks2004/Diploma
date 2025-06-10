@@ -9,10 +9,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.gromagz.education" />
+                  <option name="mobileSdkAppId" value="1:28386282065:android:a04f971b317ecd377e0670" />
+                  <option name="projectId" value="splash-screeen-3f2a4" />
+                  <option name="projectNumber" value="28386282065" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

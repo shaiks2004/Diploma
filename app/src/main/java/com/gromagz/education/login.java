@@ -54,10 +54,10 @@ public class login extends AppCompatActivity {
 
         FirebaseUser currentUser = auth.getCurrentUser();
         if (currentUser != null) {
-//            Log.d(TAG, "User already signed in: " + currentUser.getEmail());
-//            startActivity(new Intent(this, MainActivity.class));
-//            finish();
-//            return;
+            Log.d(TAG, "User already signed in: " + currentUser.getEmail());
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+            return;
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -157,8 +157,8 @@ public class login extends AppCompatActivity {
                         startIntentSenderForResult(result.getPendingIntent().getIntentSender(),
                                GlobalInterface.REQ_ONE_TAP, null, 0, 0, 0);
                     } catch (IntentSender.SendIntentException e) {
-                        Log.e(TAG, "Couldn't start One Tap UI: " + e.getLocalizedMessage());
-                        Log.e("OneTap", "Couldn't start One Tap UI: " + e.getLocalizedMessage());
+                        Log.d(TAG, "Couldn't start One Tap UI: " + e.getLocalizedMessage());
+                        Log.d("OneTap", "Couldn't start One Tap UI: " + e.getLocalizedMessage());
                     }
                 })
                 .addOnFailureListener(this, e -> {
