@@ -13,7 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.gromagz.education.MainActivity;
 import com.gromagz.education.R;
+import com.gromagz.education.login;
 
 public class Home_page extends AppCompatActivity {
 
@@ -21,6 +25,8 @@ public class Home_page extends AppCompatActivity {
     private ImageView profile_image, notify, message, img_slider;
     private TextView Profile_User;
 
+
+    private FirebaseAuth author;
 //    private ImageView ;
     //nav_bar_menu
 
@@ -31,7 +37,43 @@ public class Home_page extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.home_page);
         BottomNavigationView nav_menu = findViewById(R.id.bottom_navigation);
-        Bottom_Nav_Action(nav_menu);
+
+        // Firebase Authentication
+        author = FirebaseAuth.getInstance();
+        if (author.getCurrentUser() == null) {
+            Intent redirect = new Intent(Home_page.this, login.class);
+            startActivity(redirect);
+            finish();
+            return;
+        }
+
+        nav_menu.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                switch (id) {
+//                    case(id== R.id.nav_home):
+//                        Intent home = new Intent(Home_page.this, Home_page.class);
+//                        startActivity(home);
+//
+//                        return true;
+//                case R.id.nav_search:
+//                    Intent search = new Intent(Home_page.this, Home_page.class);
+//                    return true;
+//                case R.id.chatbot:
+//                    Intent chatbot = new Intent(Home_page.this, Home_page.class);
+//                    return true;
+//                case R.id.resourses:
+//                    Intent resourse = new Intent(Home_page.this, Home_page.class);
+//                    return true;
+//                case R.id.nav_community:
+//                    Intent comminity = new Intent(Home_page.this, Home_page.class);
+//                    return true;
+                }
+
+                return false;
+            }
+        });
 
         View includedCard1 = findViewById(R.id.internship);
         TextView title1 = includedCard1.findViewById(R.id.card_title);
@@ -85,31 +127,7 @@ public class Home_page extends AppCompatActivity {
         recimg3.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.home_scholorship));
     }
 
-    void Bottom_Nav_Action(BottomNavigationView nav) {
-        nav.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.nav_home:
-                    Intent home = new Intent(Home_page.this, Home_page.class);
-                    startActivity(home);
 
-                    return true;
-//                case R.id.nav_search:
-//                    Intent search = new Intent(Home_page.this, Home_page.class);
-//                    return true;
-//                case R.id.chatbot:
-//                    Intent chatbot = new Intent(Home_page.this, Home_page.class);
-//                    return true;
-//                case R.id.resourses:
-//                    Intent resourse = new Intent(Home_page.this, Home_page.class);
-//                    return true;
-//                case R.id.nav_community:
-//                    Intent comminity = new Intent(Home_page.this, Home_page.class);
-//                    return true;
-            }
-            return false;
-        });
 
 
     }
-
-}

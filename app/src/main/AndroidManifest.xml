@@ -303,7 +303,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.gromagz.education.MainActivity" />
+        <activity android:name="com.gromagz.education.Utility.Home_page" />
     </application>
 
 </manifest>
