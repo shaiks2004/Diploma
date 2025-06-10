@@ -1,25 +1,26 @@
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="150dp"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_margin="8dp"
     android:background="@color/card_background"
     app:cardBackgroundColor="@color/secondary"
     app:cardCornerRadius="16dp"
     app:cardElevation="8dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="15dp">
 
         <ImageView
-            android:id="@+id/card_image"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:id="@+id/rec_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:scaleType="fitCenter"
             android:shadowColor="@color/shadow"
             android:shadowDx="2"
@@ -28,22 +29,18 @@
             android:src="@drawable/home_internship" />
 
         <TextView
-            android:id="@+id/card_title"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="18dp"
-            android:layout_weight="1"
+            android:id="@+id/rec_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
             android:gravity="center_vertical"
-            android:lineSpacingExtra="5sp"
-            android:paddingStart="35dp"
             android:shadowColor="@color/shadow"
             android:shadowDx="1"
             android:shadowDy="1"
             android:shadowRadius="1"
             android:text="Apply for\nInternships"
             android:textColor="@color/Thirdary"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
