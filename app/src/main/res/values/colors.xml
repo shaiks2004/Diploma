@@ -26,6 +26,9 @@
     <color name="card_background">#B6D7DC</color>
     <color name="buttin">#A0BCB9</color>
 
+
+
+    <color name="screen_background">F9FAFB</color>
 <!--    font color for the app-->
     <color name="Thirdary">#F6000000</color>
     <color name="secondary">#FFFFFF</color>

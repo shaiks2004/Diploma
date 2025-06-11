@@ -131,7 +131,7 @@
                     android:id="@+id/study_tips"
                     />
                 <include layout="@layout/item_recomend_card"
-                    android:id="@+id/couses"
+                    android:id="@+id/courses"
                     />
 
             </LinearLayout>

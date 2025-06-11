@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         about.setOnClickListener ( new View.OnClickListener ( ) {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent (MainActivity.this, aboutus.class);
+                Intent intent=new Intent (MainActivity.this, Profile_details.class);
                 startActivity ( intent );
             }
         } );
