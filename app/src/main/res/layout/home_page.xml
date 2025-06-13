@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/home_page"
     android:layout_width="match_parent"
+    android:backgroundTint="@color/secondary"
+    android:background="@color/secondary"
     android:layout_height="match_parent">
 
     <!--<include layout="@layout/toolbar"></include>-->
@@ -12,6 +14,7 @@
         android:layout_height="wrap_content"
         android:background="@android:color/white"
         android:elevation="0dp"
+        android:layout_marginTop="23dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="16dp">
@@ -30,11 +33,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/dm_regular"
             android:text="HEY, USER"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textColor="@color/thirdary"
+            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/notification_icon"
@@ -74,10 +76,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Choose Category"
-                android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/buttons"
-                android:textSize="15sp" />
+                android:text="Choose Category "
+                android:textColor="@color/thirdary"
+                android:textColorHighlight="@color/colorPrimary"
+                android:textSize="20sp" />
 
             <include
                 android:id="@+id/internship"
@@ -103,9 +105,9 @@
                 android:layout_margin="10dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Recommended for you,"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/thirdary"
                 android:textColorHighlight="@color/buttons"
-                android:textSize="15sp" />
+                android:textSize="20sp" />
 
             <HorizontalScrollView
                 android:layout_width="wrap_content"
@@ -129,7 +131,7 @@
                     android:id="@+id/study_tips"
                     />
                 <include layout="@layout/item_recomend_card"
-                    android:id="@+id/couses"
+                    android:id="@+id/courses"
                     />
 
             </LinearLayout>
@@ -142,14 +144,15 @@
 
     </ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+        android:id="@+id/nav_menu"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/bottom_nav_background"
+        android:background="@color/white"
         app:menu="@menu/bottom_nav_menu"
-        android:clickable="true"
-        app:labelVisibilityMode="labeled" />
+        app:itemIconTint="@color/buttons"
+        />
+
 
 
 </RelativeLayout>

@@ -1,7 +1,7 @@
 <resources>
 
-    <color name="colorPrimary">#000000</color>
-    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimary">#A892FF</color>
+    <color name="colorPrimaryDark">#5D3CAA</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="background_color">#F5F5F5</color>
     <color name="fab_color">#FF4081</color>
@@ -26,12 +26,18 @@
     <color name="card_background">#B6D7DC</color>
     <color name="buttin">#A0BCB9</color>
 
-<!--    font color for the app-->
-    <color name="Thirdary">#F6000000</color>
-    <color name="secondary">#FFFFFF</color>
 
-    <color name="shadow">#353232</color>
-    <color name="buttons">#343434</color>
+
+    <color name="screen_background">#F9FAFB</color>
+
+<!--    font color for the app-->
+    <color name="thirdary">#000000</color> //for font text
+    <color name="secondary">#FFFFFF</color> // for screens
+    <color name="Font">#04005A</color> // for premium titles
+
+    <color name="shadow">#B798E9</color> //for backgorund shadows
+    <color name="buttons">#5D3CAA</color> // for buttons
+    <color name="cards">#A892FF</color> // for cards
 
 
 </resources>

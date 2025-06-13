@@ -30,6 +30,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.gromagz.education.Utility.Home_page;
 
 public class login extends AppCompatActivity {
 
@@ -55,7 +56,7 @@ public class login extends AppCompatActivity {
         FirebaseUser currentUser = auth.getCurrentUser();
         if (currentUser != null) {
             Log.d(TAG, "User already signed in: " + currentUser.getEmail());
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, Home_page.class));
             finish();
             return;
         }
@@ -124,7 +125,7 @@ public class login extends AppCompatActivity {
                         editor.putString("password", pass);   // fixed
                         editor.apply();
 
-                        startActivity(new Intent(this, MainActivity.class));
+                        startActivity(new Intent(this, Home_page.class));
                         finish();
                     } else {
                         Toast.makeText(this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -209,7 +210,7 @@ public class login extends AppCompatActivity {
                         FirebaseUser user = auth.getCurrentUser();
                         Log.d(TAG, "Firebase auth successful. User: " + user.getEmail());
                         Toast.makeText(this, "Signed in as " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(this, MainActivity.class));
+                        startActivity(new Intent(this, Home_page.class));
                         finish();
                     } else {
                         Log.e(TAG, "Firebase auth failed: " + task.getException().getMessage());

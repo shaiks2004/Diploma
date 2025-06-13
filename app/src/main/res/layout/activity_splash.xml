@@ -38,7 +38,7 @@
         android:id="@+id/logobottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_italic"
+        android:fontFamily="@font/poppins_regular"
         android:text="devloped by diploma holder"
         android:layout_marginTop="300dp"
         android:textColorHint="#090909" />

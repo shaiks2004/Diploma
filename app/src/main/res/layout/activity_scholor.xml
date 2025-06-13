@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,133 +7,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
+    android:orientation="vertical"
     tools:context=".scholor">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+<include layout="@layout/toolbar"/>
+    <include layout="@layout/scholorship_card"/>
 
-        <!-- Title Section -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginBottom="16dp">
 
-            <!-- Title TextView -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SCHOLARSHIP LISTS"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/poppins_bold"
-                android:textColor="@color/title_color"
-                android:textAlignment="center"
-                android:paddingBottom="16dp" />
-        </LinearLayout>
-
-        <!-- Content Section -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:id="@+id/blinlk"
-            android:background="@drawable/layout_background"
-            android:elevation="4dp"
-            android:paddingBottom="24dp"
-            android:paddingTop="24dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center">
-
-            <!-- Scholarship List -->
-            <TextView
-                android:id="@+id/aicte"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="AICTE Scholarships"
-                android:textSize="18sp"
-                android:textColor="@color/scholarship_color"
-                android:paddingBottom="12dp" />
-
-            <TextView
-                android:id="@+id/pragati"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="12dp"
-                android:textSize="18sp"
-                android:text="AICTE Pragathi Scholarships for Girls"
-                android:textColor="@color/scholarship_color" />
-
-            <TextView
-                android:id="@+id/NEC"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="12dp"
-                android:textSize="18sp"
-                android:text="NEC Scholarships"
-                android:textColor="@color/scholarship_color" />
-
-            <TextView
-                android:id="@+id/saksham"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Saksham Scholarships"
-                android:textSize="18sp"
-                android:textColor="@color/scholarship_color"
-                android:paddingBottom="12dp" />
-
-            <TextView
-                android:id="@+id/global"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="GLOBAL International Scholarships"
-                android:textColor="@color/scholarship_color"
-                android:paddingBottom="12dp" />
-
-            <TextView
-                android:id="@+id/brightmind"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Bright Mind Scholarships"
-                android:textColor="@color/scholarship_color"
-                android:textSize="18sp"
-                android:paddingBottom="12dp" />
-
-            <TextView
-                android:id="@+id/featured"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Featured Scholarship"
-                android:textSize="18sp"
-                android:textColor="@color/scholarship_color"
-                android:paddingBottom="12dp" />
-
-            <TextView
-                android:id="@+id/iet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="IET Indian Scholarship Award 2024"
-                android:textColor="@color/scholarship_color"
-                android:paddingBottom="12dp" />
-
-            <TextView
-                android:id="@+id/educationloan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="Education Loan"
-                android:textColor="@color/scholarship_color"
-                android:paddingBottom="12dp" />
-
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>

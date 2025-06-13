@@ -20,6 +20,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.gromagz.education.profile_dashbord.internships;
 
 public class MainActivity extends AppCompatActivity {
     private int[] images = {R.drawable.slider1, R.drawable.slider2, R.drawable.diplomasilder};
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         about.setOnClickListener ( new View.OnClickListener ( ) {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent (MainActivity.this, aboutus.class);
+                Intent intent=new Intent (MainActivity.this, Profile_details.class);
                 startActivity ( intent );
             }
         } );

@@ -17,8 +17,13 @@
         android:elevation="4dp"
         android:paddingEnd="16dp"
         android:theme="@style/ToolbarTheme"
-        app:titleTextColor="@color/Thirdary"></androidx.appcompat.widget.Toolbar>
+        app:titleTextColor="@color/thirdary"></androidx.appcompat.widget.Toolbar>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarSize="0dp"
+        android:scrollbars="none">
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
@@ -41,7 +46,7 @@
             android:shadowDy="2"
             android:shadowRadius="3"
             android:text="Welcome Back"
-            android:textColor="@color/Thirdary"
+            android:textColor="@color/thirdary"
             android:textSize="32sp" />
 
         <ImageView
@@ -68,7 +73,7 @@
                 android:fontFamily="@font/poppins_regular"
 
                 android:text="Phone number or Email"
-                android:textColor="@color/Thirdary"
+                android:textColor="@color/thirdary"
                 android:textSize="20sp" />
 
             <EditText
@@ -96,7 +101,7 @@
                 android:layout_below="@+id/forr_password"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Password"
-                android:textColor="@color/Thirdary"
+                android:textColor="@color/thirdary"
                 android:textSize="20sp" />
 
             <EditText
@@ -142,7 +147,7 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_weight="2"
-                android:background="@color/Thirdary" />
+                android:background="@color/thirdary" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -158,7 +163,7 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_weight="2"
-                android:background="@color/Thirdary" />
+                android:background="@color/thirdary" />
         </LinearLayout>
 
 
@@ -192,7 +197,7 @@
                     android:shadowDy="2"
                     android:shadowRadius="3"
                     android:text="SIGN UP"
-                    android:textColor="@color/Thirdary" />
+                    android:textColor="@color/thirdary" />
 
                 <!-- CONTINUE WITH GOOGLE Button -->
                 <LinearLayout
@@ -226,11 +231,13 @@
                         android:shadowDy="2"
                         android:shadowRadius="3"
                         android:text="CONTINUE\nWITH GOOGLE"
-                        android:textColor="@color/Thirdary" />
+                        android:textColor="@color/thirdary" />
                 </LinearLayout>
             </GridLayout>
         </LinearLayout>
 
 
     </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>
