@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
@@ -10,7 +11,6 @@
     <item
         android:id="@+id/chatbot"
         android:icon="@drawable/gemini_ai_star"
-
         android:title="Magz" />
     <item
         android:id="@+id/resourses"

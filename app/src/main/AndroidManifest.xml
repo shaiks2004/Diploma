@@ -20,7 +20,7 @@
             android:name=".profile_dashbord.notification"
             android:exported="false" />
         <activity
-            android:name=".Welcome_Screen"
+            android:name=".SplashActivity"
             android:exported="false" />
         <activity
             android:name=".csec23questions"
@@ -252,7 +252,7 @@
             android:name=".scholor"
             android:exported="false" />
         <activity
-            android:name=".internships"
+            android:name=".profile_dashbord.internships"
             android:exported="false" />
         <activity
             android:name=".cmec23"
@@ -298,7 +298,7 @@
             android:name=".youtube"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Welcome_Screen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

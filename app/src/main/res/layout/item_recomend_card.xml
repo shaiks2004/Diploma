@@ -33,7 +33,7 @@
             android:shadowDy="1"
             android:shadowRadius="1"
             android:text="Apply for\nInternships"
-            android:textColor="@color/Thirdary"
+            android:textColor="@color/thirdary"
             android:textSize="16sp" />
 
     </LinearLayout>

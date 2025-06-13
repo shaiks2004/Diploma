@@ -1,131 +1,366 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@color/screen_background"
-android:fillViewport="true"
-tools:context=".Profile_details">
-
-
-<LinearLayout
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent"
+    android:background="@color/screen_background"
+    android:fillViewport="true">
 
-<!--    &lt;!&ndash; Header &ndash;&gt;-->
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:gravity="center_vertical"-->
-<!--        android:paddingBottom="12dp"-->
-<!--        android:weightSum="1">-->
-
-<!--        <ImageView-->
-<!--            android:layout_width="24dp"-->
-<!--            android:layout_height="24dp"-->
-<!--            android:src="@drawable/ic_back" />-->
-
-<!--        <TextView-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:gravity="center"-->
-<!--            android:text="Gromagz Profile"-->
-<!--            android:textSize="18sp"-->
-<!--            android:textStyle="bold" />-->
-
-<!--        <ImageView-->
-<!--            android:layout_width="24dp"-->
-<!--            android:layout_height="24dp"-->
-<!--            android:src="@drawable/ic_menu" />-->
-<!--    </LinearLayout>-->
-
-    <!-- Profile Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:padding="16dp">
 
-        <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:src="@drawable/ic_profile"
-            android:layout_marginBottom="4dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gromagz"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/screen_background"
+            android:paddingBottom="12dp"
+            android:weightSum="1">
 
-        <Button
-            android:id="@+id/edit_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit Profile"
-            android:textSize="12sp"
-            android:backgroundTint="#D0C4F7"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="6dp"/>
-    </LinearLayout>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/round_arrow_back_24" />
 
-    <!-- Cards Grid -->
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:layout_marginTop="16dp"
-        android:rowCount="4"
-        android:orientation="horizontal">
-
-        <!-- Repeat this block for each card -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_columnWeight="1"
-            card_view:cardCornerRadius="10dp"
-            card_view:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:gravity="center">
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Gromagz Profile"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/thirdary" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_add" />
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/messages" />
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
+        <!-- Profile Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:background="@color/screen_background"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/app_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gromagz"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/thirdary" />
+
+            <Button
+                android:id="@+id/edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:backgroundTint="@color/cards"
+                android:text="Edit Profile"
+                android:textColor="@color/Font"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Cards Grid -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:columnCount="2"
+            android:background="@color/screen_background"
+            android:orientation="horizontal"
+            android:rowCount="4">
+
+            <!-- Card Template -->
+            <!-- Repeat this block and change only the text -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="131dp"
+                android:layout_columnWeight="1"
+                android:background="@color/screen_background"
+                android:layout_margin="8dp"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Add Summary"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    android:orientation="vertical"
+                    android:background="@color/screen_background"
+                    android:gravity="center"
+                    android:padding="20dp">
 
-        <!-- Duplicate and change text for: Post, Education, Skills, Experience, Social Links, Projects, Certifications -->
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_add" />
 
-    </GridLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Add Summary"
+                        android:fontFamily="@font/dm_24pt_regular"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/thirdary" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-    <!-- Footer -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ⓘ About Profile"
-        android:layout_marginTop="24dp"
-        android:gravity="center_horizontal"
-        android:textColor="#666" />
-</LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="161dp"
+                android:background="@color/screen_background"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/screen_background"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_add" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Add Post"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/dm_24pt_regular"
+                        android:textStyle="bold"
+                        android:textColor="@color/thirdary" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="131dp"
+                android:layout_columnWeight="1"
+                android:background="@color/screen_background"
+                android:layout_margin="8dp"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/screen_background"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_add" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Add Education"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/dm_24pt_regular"
+                        android:textStyle="bold"
+                        android:textColor="@color/thirdary" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="131dp"
+                android:layout_columnWeight="1"
+                android:background="@color/screen_background"
+                android:layout_margin="8dp"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/screen_background"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_add" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Add Skills"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/dm_24pt_regular"
+                        android:textStyle="bold"
+                        android:textColor="@color/thirdary" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="168dp"
+                android:layout_columnWeight="1"
+                android:background="@color/screen_background"
+                android:layout_margin="8dp"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/screen_background"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_add" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Add Experience"
+                        android:fontFamily="@font/dm_24pt_regular"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/thirdary" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="131dp"
+                android:layout_columnWeight="1"    android:background="@color/screen_background"
+
+                android:layout_margin="8dp"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/screen_background"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_add" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Add Social Links"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/dm_24pt_regular"
+                        android:textStyle="bold"
+                        android:textColor="@color/thirdary" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="162dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@color/screen_background"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/screen_background"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_add" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Add Projects"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/dm_24pt_regular"
+                        android:textStyle="bold"
+                        android:textColor="@color/thirdary" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="162dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@color/screen_background"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/screen_background"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_add" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Add Certificates"
+                        android:fontFamily="@font/dm_24pt_regular"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/thirdary" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+    </LinearLayout>
 </ScrollView>

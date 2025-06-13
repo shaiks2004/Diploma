@@ -6,12 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="25dp"
+    android:gravity="center"
     android:orientation="vertical"
+    android:background="@color/screen_background"
     tools:context=".Welcome_Screen">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_regular"
+        android:fontFamily="@font/dm_sans_semibold"
         android:shadowColor="@color/shadow"
         android:shadowDx="2"
         android:id="@+id/welcome_text"
@@ -20,7 +22,7 @@
         android:duplicateParentState="true"
         android:text="HEY,\nWELCOME"
         android:layout_margin="10px"
-        android:textColor="@color/Thirdary"
+        android:textColor="@color/thirdary"
         android:textSize="48sp" />
     <ImageView
         android:layout_width="match_parent"
@@ -30,11 +32,13 @@
         android:src="@drawable/welcome_screen"/>
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginbut"
-        android:layout_width="250dp"
+        android:layout_width="230dp"
         android:layout_height="57dp"
         android:backgroundTint="@color/buttons"
         android:layout_below="@+id/password"
         android:layout_gravity="center"
+        android:gravity="center"
+        app:iconGravity="end"
         android:layout_marginTop="29dp"
         android:fontFamily="@font/poppins_regular"
         android:shadowColor="@color/shadow"
@@ -44,6 +48,8 @@
         android:shadowRadius="3"
         android:text="LOGIN"
         android:textColor="@color/secondary"
+        app:icon="@drawable/outline_arrow_right_alt_24"
+        app:iconSize="40dp"
         android:textSize="30sp"
         app:cornerRadius="9dp" />
     <TextView

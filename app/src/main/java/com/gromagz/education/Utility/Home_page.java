@@ -15,20 +15,24 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.gromagz.education.BCEc21;
 import com.gromagz.education.R;
 import com.gromagz.education.Profile_details;
 import com.gromagz.education.carrierGuidence;
+import com.gromagz.education.chatbot;
 import com.gromagz.education.curriculam;
-import com.gromagz.education.internships;
+import com.gromagz.education.profile_dashbord.internships;
 import com.gromagz.education.login;
+import com.gromagz.education.profile_dashbord.notification;
 import com.gromagz.education.scholor;
+import com.gromagz.education.youtube;
 
 public class Home_page extends AppCompatActivity {
 
 
     private ImageView profile_image, notify, message, img_slider;
     private TextView Profile_User;
-
 
     private FirebaseAuth author;
 //    private ImageView ;
@@ -41,7 +45,7 @@ public class Home_page extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.home_page);
     //bottom navigation
-        BottomNavigationView nav_menu = findViewById(R.id.bottom_navigation);
+        BottomNavigationView nav_menu = findViewById(R.id.nav_menu);
 
         //id finding
         profile_image=(ImageView) findViewById(R.id.profile_image);
@@ -50,7 +54,15 @@ public class Home_page extends AppCompatActivity {
 
         //the user login name will apper here
         Profile_User=findViewById(R.id.Profile_User);
-        Profile_User.setText(getIntent().toString());
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            String userName = FirebaseAuth.getInstance().getUid();
+            if (userName != null && !userName.isEmpty()) {
+                Profile_User.setText(userName);
+            } else {
+                Profile_User.setText("User"); // Default text if no display name is set
+            }
+        }
 
         profile_image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +74,7 @@ public class Home_page extends AppCompatActivity {
         notify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Home_page.this, Profile_details.class);
+                Intent intent = new Intent(Home_page.this, notification.class);
                 startActivity(intent);
             }
         });
@@ -73,8 +85,6 @@ public class Home_page extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-
-
 
         // Firebase Authentication
         author = FirebaseAuth.getInstance();
@@ -88,30 +98,29 @@ public class Home_page extends AppCompatActivity {
         nav_menu.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-                switch (id) {
-//                    case(id== R.id.nav_home):
-//                        Intent home = new Intent(Home_page.this, Home_page.class);
-//                        startActivity(home);
-//
-//                        return true;
-//                case R.id.nav_search:
-//                    Intent search = new Intent(Home_page.this, Home_page.class);
-//                    return true;
-//                case R.id.chatbot:
-//                    Intent chatbot = new Intent(Home_page.this, Home_page.class);
-//                    return true;
-//                case R.id.resourses:
-//                    Intent resourse = new Intent(Home_page.this, Home_page.class);
-//                    return true;
-//                case R.id.nav_community:
-//                    Intent comminity = new Intent(Home_page.this, Home_page.class);
-//                    return true;
-                }
+                int itemId = item.getItemId();
 
+                if (itemId == R.id.nav_home) {
+                    startActivity(new Intent(Home_page.this, Home_page.class));
+                    return true;
+                } else if (itemId == R.id.nav_search) {
+                    startActivity(new Intent(Home_page.this, youtube.class));
+                    return true;
+                } else if (itemId == R.id.chatbot) {
+                    startActivity(new Intent(Home_page.this, chatbot.class));
+                    return true;
+                } else if (itemId == R.id.resourses) {
+                    startActivity(new Intent(Home_page.this, carrierGuidence.class));
+                    return true;
+                } else if (itemId == R.id.nav_community) {
+                    startActivity(new Intent(Home_page.this, BCEc21.class));
+                    return true;
+                }
                 return false;
             }
         });
+
+
 
         View includedCard1 = findViewById(R.id.internship);
         TextView title1 = includedCard1.findViewById(R.id.card_title);

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="8dp"
+    card_view:cardBackgroundColor="@color/secondary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Row for logo + title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/app_logo"
+                android:background="@drawable/circle_background"
+            android:contentDescription="Scholarship Logo"
+            android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:id="@+id/scholarshipTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dm_sans_semibold"
+                android:text="Merit-Based Scholarship"
+                android:textColor="@color/Font"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/scholarshipDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Awarded to students with excellent academic records."
+            android:textColor="@color/thirdary"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Scholarship Amount -->
+        <TextView
+            android:id="@+id/scholarshipAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dm_regular"
+            android:text="💰 Amount: ₹10,000"
+            android:textColor="@color/thirdary"
+            android:textSize="13sp"
+            android:layout_marginTop="6dp"/>
+
+        <!-- Eligibility -->
+        <TextView
+            android:id="@+id/eligibility"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/dm_regular"
+            android:layout_height="wrap_content"
+            android:text="🎓 Eligibility: Diploma Students (70%+)"
+            android:textColor="@color/thirdary"
+            android:textSize="13sp"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Last Date -->
+        <TextView
+            android:id="@+id/lastDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dm_regular"
+            android:text="🗓 Last Date: 30 June 2025"
+            android:textColor="@color/thirdary"
+            android:textSize="13sp"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Apply Button -->
+        <Button
+            android:id="@+id/applyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Apply Now"
+            android:textColor="@color/secondary"
+            android:backgroundTint="@color/buttons"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
