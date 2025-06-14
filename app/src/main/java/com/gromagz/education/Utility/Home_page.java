@@ -153,7 +153,7 @@ public class Home_page extends AppCompatActivity {
         TextView title3 = includedCard3.findViewById(R.id.card_title);
         ImageView img3=includedCard3.findViewById(R.id.card_image);
         img3.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.home_contest_winner));
-        title3.setText("Participate in\ncontests and\nwin");
+        title3.setText("Apply for\nContests");
         includedCard3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

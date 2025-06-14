@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Education">
         <activity
+            android:name=".Community.Community_screen"
+            android:exported="false" />
+        <activity
             android:name=".profile_dashbord.notification"
             android:exported="false" />
         <activity

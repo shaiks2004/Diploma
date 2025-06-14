@@ -22,7 +22,7 @@ import com.gromagz.education.Utility.Home_page;
 public class Welcome_Screen extends AppCompatActivity {
     private TextView signup, welcome_text;
     private MaterialButton login;
-    private Animation topAnim, bottomAnim;
+
     private String Tag = "Welcome Screen .java";
     private FirebaseAuth mAuth;
 
@@ -35,19 +35,14 @@ public class Welcome_Screen extends AppCompatActivity {
 
         Log.d(Tag, "The onCreate method in Welcome Screen started");
 
-        // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        // Check if user is already logged in or if it's first time
         checkUserStatus();
 
-        // Initialize views
         initializeViews();
 
-        // Set up animations
-        setupAnimations();
 
-        // Set up click listeners
+
         setupClickListeners();
     }
 
@@ -88,15 +83,7 @@ public class Welcome_Screen extends AppCompatActivity {
         signup.setText(Html.fromHtml("Don't have an account?   <font color='#5D3CAA'>Sign Up</font>"));
     }
 
-    private void setupAnimations() {
-        topAnim = AnimationUtils.loadAnimation(this, R.anim.topanim);
-        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.botomanim);
 
-        // Apply animations
-        login.setAnimation(topAnim);
-        welcome_text.setAnimation(topAnim);
-        signup.setAnimation(bottomAnim);
-    }
 
     private void setupClickListeners() {
         // Login button click
@@ -128,15 +115,7 @@ public class Welcome_Screen extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            Log.d(Tag, "User is already signed in: " + currentUser.getEmail());
-        }
-    }
+
 
     // Call this method when user successfully completes login/signup
     public static void markUserAsLoggedIn(AppCompatActivity activity) {

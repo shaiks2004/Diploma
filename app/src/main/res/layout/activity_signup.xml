@@ -77,7 +77,7 @@
                 <EditText
                     android:id="@+id/rgusername"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="50dp"
                     android:layout_below="@id/textview"
                     android:background="@drawable/edit_text_background"
                     android:inputType="textPersonName"
@@ -107,7 +107,7 @@
                 <EditText
                     android:id="@+id/rgemail"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="50dp"
                     android:layout_below="@id/textview2"
                     android:background="@drawable/edit_text_background"
                     android:inputType="textEmailAddress"
@@ -135,7 +135,7 @@
                 <EditText
                     android:id="@+id/college"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="50dp"
                     android:layout_below="@id/textview3"
                     android:background="@drawable/edit_text_background"
                     android:inputType="text"
@@ -163,7 +163,7 @@
                 <EditText
                     android:id="@+id/rgnum"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="50dp"
                     android:layout_below="@id/textview4"
                     android:background="@drawable/edit_text_background"
                     android:inputType="phone|number"
@@ -202,7 +202,7 @@
                 <EditText
                     android:id="@+id/rgPassword"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="50dp"
                     android:layout_below="@+id/textview5"
                     android:background="@drawable/edit_text_background"
                     android:inputType="textVisiblePassword"
@@ -223,14 +223,14 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/for_repassword"
                     android:fontFamily="@font/poppins_regular"
-                    android:text="Re Enter Password"
+                    android:text="Re-Enter Password"
                     android:textColor="@color/thirdary"
                     android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/rgrePassword"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="50dp"
                     android:layout_below="@+id/textview6"
                     android:background="@drawable/edit_text_background"
                     android:inputType="textPassword"
@@ -349,7 +349,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/poppins_regular"
                         android:text="Signup With Google"
-                        android:shadowColor="@color/shadow"
+                        android:shadowColor="@color/thirdary"
                         android:shadowDx="2"
                         android:shadowDy="2"
                         android:shadowRadius="3"

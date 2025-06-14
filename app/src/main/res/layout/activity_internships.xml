@@ -9,12 +9,9 @@
     <include layout="@layout/toolbar"/>
 
 
-    <include layout="@layout/internship_card"
-        android:id="@+id/internship_card"></include>
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/recyclerViewInternships"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:padding="12dp" />-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewInternships"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp" />
 </LinearLayout>

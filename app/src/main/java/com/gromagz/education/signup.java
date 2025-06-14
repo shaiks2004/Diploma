@@ -109,7 +109,7 @@ public class signup extends AppCompatActivity {
         setupOneTapLogin();
         beginGoogleOneTap(btnGoogle);
         TextView loginbut = findViewById(R.id.loginbut);
-        loginbut.setText(Html.fromHtml("Already have an account?  <font color='#274CDE'>Log in</font>"));
+        loginbut.setText(Html.fromHtml("Already have an account?  <font color='#5D3CAA'>Log in</font>"));
 
         // Navigate to login activity
         loginbut.setOnClickListener(view -> {

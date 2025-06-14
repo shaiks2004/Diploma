@@ -17,7 +17,7 @@
         <!-- Left Side Image -->
         <ImageView
             android:id="@+id/card_image"
-            android:layout_width="0dp"
+            android:layout_width="162dp"
             android:layout_height="140dp"
             android:layout_weight="1"
             android:layout_marginEnd="16dp"
@@ -26,7 +26,7 @@
 
         <!-- Right Side Card -->
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="156dp"
             android:layout_height="116dp"
             android:layout_weight="1"
             app:cardBackgroundColor="@color/cards"
@@ -47,26 +47,26 @@
                     android:fontFamily="@font/poppins_medium"
                     android:lineSpacingExtra="1sp"
                     android:padding="3dp"
+                    android:layout_marginTop="10dp"
                     android:text="Apply for\nInternships"
                     android:textColor="@color/Font"
                     android:layout_marginStart="15dp"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
 
                 <!-- Get Started Button -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_get_started"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
+                    android:layout_width="114dp"
+                    android:layout_height="35dp"
                     android:backgroundTint="@color/buttons"
-                    android:elevation="2dp"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="center"
                     android:gravity="center"
                     android:fontFamily="@font/poppins_medium"
-                    android:paddingHorizontal="8dp"
+                    android:paddingHorizontal="1dp"
                     android:text="Get Started"
                     android:textColor="@color/secondary"
                     android:textSize="12sp"
-                    app:cornerRadius="18dp"
+                    app:cornerRadius="10dp"
                     app:icon="@drawable/back_arrow"
                     app:iconGravity="end"
                     app:iconSize="16dp" />

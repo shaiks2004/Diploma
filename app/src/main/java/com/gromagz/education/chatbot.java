@@ -62,12 +62,6 @@ public class chatbot extends AppCompatActivity {
 
         openAIApi = retrofit.create(OpenAIApi.class);
 
-        // Handle window insets for edge-to-edge display
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         // Initialize UI components
         recyclerView = findViewById(R.id.recycleview);

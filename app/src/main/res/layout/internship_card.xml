@@ -127,6 +127,7 @@
                     android:layout_height="18dp"
                     android:src="@drawable/hand" />
                 <TextView
+                    android:id="@+id/amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" INR 7K-10K/month"
@@ -154,6 +155,7 @@
                     android:fontFamily="@font/dm_regular"
                     android:textColor="@color/thirdary"
                     android:layout_marginStart="4dp" />
+
             </LinearLayout>
         </LinearLayout>
 
